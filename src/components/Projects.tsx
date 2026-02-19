@@ -9,9 +9,9 @@ const projects = [
     type: 'automation',
     badge: '⭐ Workflow Complet',
     description:
-      "Un agent IA central orchestre toutes les fonctions clés de l’entreprise — Sales, Marketing, RH, Finance, Support, Operations — en automatisant les tâches répétitives et en libérant jusqu’à 15h par semaine pour les équipes.",
+      "Un agent IA central qui orchestre toutes les fonctions clés de l’entreprise — Sales, Marketing, RH, Finance, Support, Operations — en automatisant les tâches répétitives et en libérant jusqu’à 15h par semaine pour les équipes.",
     image: '/Images/n8n-agent-polyvalent.png',
-    duration: '2 à 4 semaines',
+    duration: '4 semaines',
     price: '2999€',
     maintenance: '499€ HT/mois',
     results: [
@@ -48,7 +48,7 @@ const projects = [
       "Un site web performant et élégant conçu pour une agence spécialisée dans les voyages immersifs au Maroc. Alliant rigueur technique et esthétique épurée, la plateforme reflète l'authenticité des expériences proposées : découvertes culturelles et rencontres locales.",
     image: '/Images/rdvsf3.jpg',
     link: 'https://rendez-vous-sans-frontieres.fr/',
-    duration: '6 jours',
+    duration: '2 semaines',
     price: '1800€',
     results: null,
     technicalHighlights: [
@@ -81,7 +81,7 @@ const projects = [
       '/Images/mymental.jpg',
       '/Images/mymental2.jpg'
     ],
-    duration: '12 jours',
+    duration: '4 semaines',
     price: '3600€',
     results: null,
     technicalHighlights: [
