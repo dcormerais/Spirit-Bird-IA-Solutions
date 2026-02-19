@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Core Colors */
+  --primary: #00E5FF;
+  --primary-dark: #00B8D4;
+  --primary-light: #80F1FF;
+  --secondary: #2A9D8F;
+  --secondary-dark: #1F7268;
+  --secondary-light: #3FB5A6;
+  --background: #040B14;
+  --text: #E2E8F0;
+  --text-dark: #333333;
+
+  /* Animation Timings */
+  --transition-fast: 200ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+/* Project Card Styles */
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Text Sizes */
+@media (max-width: 640px) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Fixed Navigation */
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background-color: rgba(4, 11, 20, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--secondary);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  background: var(--secondary-dark);
+}
+
+/* Optimized Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  will-change: transform;
+}
+
+/* Optimized Text Gradient Animation */
+.text-gradient-animate {
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--secondary) 50%,
+    var(--primary) 100%
+  );
+  background-size: 200% auto;
+  animation: textGradient 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  will-change: background-position;
+}
+
+.text-gradient-animate::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: inherit;
+  filter: blur(8px);
+  opacity: 0.3;
+  z-index: var(--z-negative);
+}
+
+/* Optimized Card Styles with Modern Variables */
+.service-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 20px 25px rgba(0, 229, 255, 0.15);
+}
+
+/* Badge Premium Style */
+.badge-premium {
+  @apply inline-flex items-center px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full text-sm border border-gray-700;
+  transition: all var(--transition-normal) ease-in-out;
+}
+
+.badge-premium:hover {
+  @apply border-blue-500/30 bg-blue-500/10;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 2px rgba(0, 229, 255, 0.05);
+}
+
+/* Optimized Button Styles */
+.button-primary {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: all var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.button-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  transition: opacity var(--transition-normal) ease-in-out;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+}
+
+.button-primary:hover::before {
+  opacity: 1;
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 229, 255, 0.1);
+}
+
+/* Optimized Grid Background */
+.bg-grid-white {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54 48 L6 48 L6 54 L54 54 L54 48 Z' stroke='rgba(255, 255, 255, 0.03)' fill='none'/%3E%3C/svg%3E");
+  will-change: background-position;
+}
+
+/* Optimized Animations */
+@keyframes textGradient {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% { 
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.5;
+  }
+  50% { 
+    transform: scale(1.1); 
+    opacity: 1;
+  }
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Intersection Observer Animation Classes */
+.fade-up-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-slow) ease-out,
+              transform var(--transition-slow) ease-out;
+}
+
+.fade-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 360px) {
+  .navbar-mobile {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .service-card {
+    margin: 0.5rem;
+  }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
