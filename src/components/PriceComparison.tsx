@@ -57,7 +57,7 @@ const automationPricing = [
     title: 'Automatisation Simple',
     duration: '1 à 2 semaines',
     price: 'À partir de 999€',
-    maintenance: '199€ HT/mois',
+    maintenance: '199€ HT',
     highlight: true,
     features: [
       '1 workflow automatisé',
@@ -73,7 +73,7 @@ const automationPricing = [
     title: 'Workflow Complet',
     duration: '3 à 4 semaines',
     price: 'À partir de 2999€',
-    maintenance: '499€ HT/mois',
+    maintenance: '499€ HT',
     highlight: false,
     features: [
       'Plusieurs workflows connectés',
