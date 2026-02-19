@@ -71,7 +71,7 @@ const automationPricing = [
   },
   {
     title: 'Workflow Complet',
-    duration: '2 à 4 semaines',
+    duration: '3 à 4 semaines',
     price: 'À partir de 2999€',
     maintenance: '499€ HT/mois',
     highlight: false,
@@ -90,7 +90,7 @@ const automationPricing = [
 const projectExamples = [
   {
     title: 'Site Vitrine',
-    duration: '4-5 jours',
+    duration: '1 semaine',
     price: '1200€ à 1500€',
     maintenance: '25€ HT/mois',
     features: [
@@ -103,7 +103,7 @@ const projectExamples = [
   },
   {
     title: 'E-commerce',
-    duration: '8-10 jours',
+    duration: '2 semaines',
     price: '2400€ à 3000€',
     maintenance: '50€ HT/mois',
     features: [
@@ -116,7 +116,7 @@ const projectExamples = [
   },
   {
     title: 'Application Web',
-    duration: '7-9 jours',
+    duration: '2 semaines',
     price: '2100€ à 2700€',
     maintenance: '50€ HT/mois',
     features: [
@@ -129,7 +129,7 @@ const projectExamples = [
   },
   {
     title: 'Application Mobile',
-    duration: '12-15 jours',
+    duration: '3 semaines',
     price: '3600€ à 4500€',
     maintenance: '150€ HT/mois',
     features: [
