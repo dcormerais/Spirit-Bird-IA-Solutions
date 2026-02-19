@@ -103,7 +103,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              En 1 à 2 semaines, vos équipes récupèrent du temps pour ce qui compte vraiment.
+              En quelques semaines, vos équipes récupèrent du temps pour ce qui compte vraiment.
             </motion.p>
 
             <motion.div
