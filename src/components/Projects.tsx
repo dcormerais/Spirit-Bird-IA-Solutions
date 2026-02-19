@@ -1,17 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Star, Globe, ShoppingBag, Smartphone, Bot, Zap, BarChart2, Clock, Check } from 'lucide-react';
+import { ExternalLink, Star, Globe, Smartphone, Bot, Zap, BarChart2, Clock } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Agent IA Polyvalent — PME Distribution',
+    title: 'Agent IA Polyvalent',
     type: 'automation',
-    badge: '⭐ Automatisation IA',
-    description: "Déploiement d'un agent IA central gérant les emails, le calendrier, les contacts et le reporting financier pour une PME du secteur distribution. L'équipe passait 15h/semaine sur des tâches manuelles répétitives — relances clients, saisie de données, rapports hebdomadaires.",
-    image: null,
-    duration: '10 jours',
-    price: '1800€ + 99€/mois',
+    badge: '⭐ Workflow Complet',
+    description:
+      "Un agent IA central orchestre toutes les fonctions clés de l’entreprise — Sales, Marketing, RH, Finance, Support, Operations — en automatisant les tâches répétitives et en libérant jusqu’à 15h par semaine pour les équipes.",
+    image: '/Images/n8n-agent-polyvalent.png',
+    duration: '2 à 4 semaines',
+    price: '2999€',
+    maintenance: '499€ HT/mois',
     results: [
       { label: 'Temps récupéré', value: '15h/semaine' },
       { label: 'Relances automatisées', value: '100%' },
@@ -42,7 +44,8 @@ const projects = [
     title: 'Rendez-vous Sans Frontières',
     type: 'web',
     badge: null,
-    description: "Un site web performant et élégant conçu pour une agence spécialisée dans les voyages immersifs au Maroc. Alliant rigueur technique et esthétique épurée, la plateforme reflète l'authenticité des expériences proposées : découvertes culturelles et rencontres locales.",
+    description:
+      "Un site web performant et élégant conçu pour une agence spécialisée dans les voyages immersifs au Maroc. Alliant rigueur technique et esthétique épurée, la plateforme reflète l'authenticité des expériences proposées : découvertes culturelles et rencontres locales.",
     image: '/Images/rdvsf3.jpg',
     link: 'https://rendez-vous-sans-frontieres.fr/',
     duration: '6 jours',
@@ -72,7 +75,8 @@ const projects = [
     title: 'MyMental',
     type: 'mobile',
     badge: null,
-    description: "Application mobile alliant sophistication technique et approche holistique, conçue pour accompagner les utilisateurs dans un parcours personnalisé de santé globale : méditation guidée, entraînements sportifs adaptés et interactions sociales engagées.",
+    description:
+      "Application mobile alliant sophistication technique et approche holistique, conçue pour accompagner les utilisateurs dans un parcours personnalisé de santé globale : méditation guidée, entraînements sportifs adaptés et interactions sociales engagées.",
     images: [
       '/Images/mymental.jpg',
       '/Images/mymental2.jpg'
@@ -132,7 +136,7 @@ const features = [
 const Projects = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.1
   });
 
   return (
@@ -206,38 +210,41 @@ const Projects = () => {
                 {project.type === 'automation' ? (
                   <div className="relative h-full">
                     <img
-                      src="/Images/n8n-agent-polyvalent.jpg"
-                      alt="Agent IA Polyvalent n8n"
-                      className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      src={project.image}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent flex items-end p-6">
                       <div className="flex flex-wrap gap-2">
                         {['Email', 'Calendrier', 'Contacts', 'Finance', 'Reporting'].map((tag) => (
-                          <span key={tag} className="px-3 py-1 text-xs rounded-full bg-primary/80 text-dark font-semibold">
+                          <span
+                            key={tag}
+                            className="px-3 py-1 text-xs rounded-full bg-primary/80 text-dark font-semibold"
+                          >
                             {tag} ✓
                           </span>
                         ))}
                       </div>
                     </div>
                   </div>
-                ) : 'images' in project ? (
-                  <div className="grid grid-cols-2 h-full">
-                    {project.images?.map((image, i) => (
-                      <div key={i} className="relative h-full">
+                ) : 'images' in project && project.images?.length > 0 ? (
+                  <div className="grid grid-cols-2 gap-2">
+                    {project.images.map((image, i) => (
+                      <div key={i} className="relative w-full aspect-[16/9]">
                         <img
                           src={image}
                           alt={`${project.title} - Vue ${i + 1}`}
-                          className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-contain rounded-xl hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <div className="relative h-full">
+                  <div className="relative w-full aspect-[16/9]">
                     <img
                       src={project.image!}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover rounded-t-xl hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain rounded-t-xl hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 )}
@@ -255,7 +262,7 @@ const Projects = () => {
                         </span>
                       )}
                     </div>
-                    {'link' in project && project.link && (
+                    {'link' in project && project.link && project.link && (
                       <a
                         href={project.link}
                         target="_blank"
@@ -274,6 +281,9 @@ const Projects = () => {
                     </div>
                     <div className="text-primary">
                       <span className="font-semibold">{project.price}</span>
+                      {project.maintenance && (
+                        <span className="text-gray-400"> / {project.maintenance}</span>
+                      )}
                     </div>
                   </div>
 

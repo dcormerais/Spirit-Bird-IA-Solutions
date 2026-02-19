@@ -81,7 +81,7 @@ const About = () => {
               <div className="flex items-center gap-8">
                 <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary/20 mt-12">
                   <img
-                    src="/Images/dodo.png"
+                    src="/Images/dodo.jpg"
                     alt="Dorian"
                     className="w-full h-full object-cover object-top"
                   />
