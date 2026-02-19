@@ -12,7 +12,7 @@ const serviceCategories = [
     services: [
       {
         title: "Automatisation Workflow",
-        price: "à partir de 500€",
+        price: "à partir de 999€",
         description: "Automatisation de vos processus métier avec l'IA — relances, reporting, saisie de données, onboarding.",
         features: [
           "Workflows sur-mesure",
@@ -30,7 +30,7 @@ const serviceCategories = [
       },
       {
         title: "Agent IA Polyvalent",
-        price: "à partir de 1200€",
+        price: "à partir de 2999€",
         description: "Un agent IA central qui gère vos emails, calendrier, contacts et reporting en langage naturel.",
         features: [
           "Gestion emails automatique",
