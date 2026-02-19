@@ -132,7 +132,7 @@ const Services = () => {
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold gradient-text mb-8">
-              On règle ça. En 1 à 2 semaines.
+              On règle ça. En quelques semaines seulement.
             </p>
             <a
               href="https://calendly.com/dorian-cormerais/30min"
