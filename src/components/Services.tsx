@@ -26,7 +26,7 @@ const services = [
       "Dashboards et reporting automatisés",
       "Relances et onboarding automatiques",
       "Formation et accompagnement équipes",
-      "Déploiement en 1 à 2 semaines",
+      "Déploiement en quelques semaines",
       "Suivi et optimisation continue"
     ]
   },
