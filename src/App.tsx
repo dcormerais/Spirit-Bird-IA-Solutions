@@ -1,8 +1,7 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Facebook, Instagram, Linkedin, Mail, CalendarCheck } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
+import { Linkedin, Mail, CalendarCheck } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -22,10 +21,7 @@ const App: React.FC = () => {
   const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&cc=${ccEmail}&su=Demande%20d'informations`;
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-blue-500' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-pink-500' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/consultant-ia/', label: 'LinkedIn', color: 'hover:text-blue-600' },
-    { icon: FaTiktok, href: 'https://tiktok.com', label: 'TikTok', color: 'hover:text-white' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/consultant-ia/', label: 'LinkedIn', color: 'hover:text-blue-400' },
     { icon: Mail, href: gmailLink, label: 'Email', color: 'hover:text-yellow-500' }
   ];
 
@@ -44,7 +40,6 @@ const App: React.FC = () => {
           className="relative"
         >
           <Navbar />
-
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={
