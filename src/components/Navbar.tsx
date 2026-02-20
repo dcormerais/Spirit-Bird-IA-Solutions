@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Linkedin, Mail, CalendarCheck } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HashLink } from 'react-router-hash-link';
 import Logo from './Logo';
@@ -46,7 +45,6 @@ const Navbar = () => {
 
   const socialLinks = [
     { icon: Linkedin, href: 'https://www.linkedin.com/in/consultant-ia/', label: 'LinkedIn', color: 'hover:text-blue-400' },
-    { icon: FaTiktok, href: 'https://tiktok.com', label: 'TikTok', color: 'hover:text-white' },
     { icon: Mail, href: gmailLink, label: 'Email', color: 'hover:text-yellow-500' }
   ];
 
