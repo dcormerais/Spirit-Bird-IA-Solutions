@@ -83,7 +83,6 @@ const Projects = () => {
     <section id="projets" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Titre */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,7 +116,6 @@ const Projects = () => {
           </motion.p>
         </div>
 
-        {/* Cards projets */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -137,19 +135,17 @@ const Projects = () => {
             >
               {/* Image */}
               {'images' in project && project.images && project.images.length > 0 ? (
-                /* MyMental : 2 colonnes, fond noir, object-contain pour respecter les proportions */
-                <div className="relative h-[350px] bg-black rounded-t-xl overflow-hidden grid grid-cols-2">
+                <div className="relative bg-black rounded-t-xl overflow-hidden flex justify-center items-center gap-4 p-4 h-[400px]">
                   {project.images.map((image, i) => (
                     <img
                       key={i}
                       src={image}
                       alt={`${project.title} - Vue ${i + 1}`}
-                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                      className="h-full w-auto object-contain hover:scale-105 transition-transform duration-300"
                     />
                   ))}
                 </div>
               ) : (
-                /* Workflow et Web : scale-down pour voir l'image entière */
                 <div className="relative h-[350px] bg-dark/60 rounded-t-xl overflow-hidden">
                   <img
                     src={'image' in project ? project.image : ''}
@@ -226,7 +222,6 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* CTA bas */}
         <div className="mt-16 text-center">
           <p className="text-gray-400 mb-8">
             Chaque projet commence par une conversation. Dites-moi ce qui vous prend du temps et on voit ce qu'on peut automatiser.
