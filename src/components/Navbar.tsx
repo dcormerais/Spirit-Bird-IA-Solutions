@@ -58,6 +58,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-dark/80 backdrop-blur-md border-b border-white/10' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+
           <HashLink smooth to="/#" scroll={scrollWithOffset} className="group flex items-center gap-4">
             <Logo className="w-12 h-12" />
             <span className="text-2xl tracking-wider font-spiritual">
@@ -89,7 +90,7 @@ const Navbar = () => {
             {/* Social Icons */}
             <div className="flex items-center space-x-4 border-l border-white/10 pl-8">
               {socialLinks.map((social) => (
-                
+                <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
@@ -103,7 +104,7 @@ const Navbar = () => {
             </div>
 
             {/* CTA */}
-            
+            <a
               href="https://calendly.com/dorian-cormerais/30min"
               target="_blank"
               rel="noopener noreferrer"
@@ -152,7 +153,7 @@ const Navbar = () => {
 
               <div className="flex items-center justify-center space-x-6 py-6 border-t border-white/10 mt-4">
                 {socialLinks.map((social) => (
-                  
+                  <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
@@ -165,7 +166,7 @@ const Navbar = () => {
                 ))}
               </div>
 
-              
+              <a
                 href="https://calendly.com/dorian-cormerais/30min"
                 target="_blank"
                 rel="noopener noreferrer"
