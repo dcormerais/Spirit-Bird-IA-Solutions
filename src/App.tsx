@@ -71,11 +71,14 @@ const App: React.FC = () => {
                     Agence d'automatisation IA pour PME — workflows sur-mesure, agents IA, outils web.
                   </p>
                   <p className="text-sm text-gray-400">100% remote · France & international 🌍</p>
-                  <a href={gmailLink} className="text-sm text-gray-400 hover:text-primary transition-colors block">
+                  <a
+                    href={gmailLink}
+                    className="text-sm text-gray-400 hover:text-primary transition-colors block"
+                  >
                     {emailAddress}
                   </a>
                 </div>
-                
+                <a
                   href="https://calendly.com/dorian-cormerais/30min"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -118,7 +121,7 @@ const App: React.FC = () => {
                 </p>
                 <div className="flex items-center gap-6">
                   {socialLinks.map((social) => (
-                    
+                    <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
@@ -132,6 +135,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
+
           </div>
         </footer>
       </div>
