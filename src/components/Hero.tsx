@@ -68,16 +68,16 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span>Automatisez vos </span>
+              <span>Gagnez du temps grâce à </span>
               <TypeAnimation
                 sequence={[
-                  'workflows métiers',
+                  "l'automatisation IA",
                   2000,
-                  'tâches répétitives',
+                  'vos workflows intelligents',
                   2000,
-                  'process manuels',
+                  'vos agents IA sur-mesure',
                   2000,
-                  'opérations internes',
+                  'la suppression des tâches inutiles',
                   2000,
                 ]}
                 wrapper="span"
@@ -93,8 +93,8 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Vos équipes passent trop de temps sur des tâches sans valeur ajoutée.
-              On connecte vos outils, on automatise vos process, on vous rend du temps.
+              Votre équipe est trop talentueuse pour passer ses journées
+              sur des tâches répétitives. Je construis les systèmes qui s'en chargent à sa place.
             </motion.p>
 
             <motion.p
@@ -103,7 +103,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              En quelques semaines, vos équipes récupèrent du temps pour ce qui compte vraiment.
+              On commence par comprendre vos vrais problèmes — pas par vous vendre de la technologie.
             </motion.p>
 
             <motion.div
@@ -116,9 +116,9 @@ const Hero = () => {
                 href="https://calendly.com/dorian-cormerais/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button-primary px-6 py-3 rounded-full inline-flex items-center text-lg font-medium group"
+                className="button-primary px-8 py-4 rounded-full inline-flex items-center text-lg font-semibold group"
               >
-                <span>Réserver un audit gratuit</span>
+                <span>Réserver mon audit gratuit — 30 min</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -128,25 +128,23 @@ const Hero = () => {
                 scroll={scrollWithOffset}
                 className="text-gray-300 hover:text-primary transition-colors px-8 py-3 text-lg font-medium flex items-center group"
               >
-                <span>Découvrir nos services</span>
+                <span>Découvrir mes services</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </HashLink>
             </motion.div>
 
-            {/* Audit gratuit badge */}
             <motion.p
               className="text-gray-500 text-sm mt-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              ✓ Audit 100% gratuit · ✓ Sans engagement · ✓ Résultats concrets en 30 min
+              ✓ Audit 100% gratuit · ✓ Sans engagement · ✓ Diagnostic concret en 30 min
             </motion.p>
           </motion.div>
         </ParallaxSection>
       </div>
 
-      {/* Effets visuels */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-dark to-dark opacity-80"></div>
       </div>
