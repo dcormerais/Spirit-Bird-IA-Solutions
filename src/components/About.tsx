@@ -1,14 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Brain, Globe, Clock } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import ParallaxSection from './ParallaxSection';
-
-const stats = [
-  { value: '5+', label: "Années d'expérience", icon: Clock },
-  { value: '3', label: 'Expertises combinées', icon: Brain },
-  { value: '100%', label: 'Remote, France & international', icon: Globe },
-  { value: '2-6', label: 'Semaines de mise en production', icon: Zap }
-];
 
 const tools = [
   "Make", "n8n", "Zapier", "LangChain",
@@ -114,24 +107,6 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="service-card p-6 rounded-xl text-center hover:border-primary/20 transition-all duration-300"
-                  >
-                    <stat.icon className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-
               {/* Approche */}
               <div className="service-card p-6 rounded-xl hover:border-primary/20 transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-6">Comment je travaille</h3>
