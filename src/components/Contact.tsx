@@ -1,16 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  Mail,
-  Globe,
-  Bot,
-  Target,
-  ShoppingBag,
-  Smartphone,
-  CalendarCheck,
-  ArrowRight,
-  CheckCircle
-} from 'lucide-react';
+import { Mail, Globe, Bot, CalendarCheck, ArrowRight, CheckCircle } from 'lucide-react';
 
 const services = [
   {
@@ -22,27 +12,10 @@ const services = [
   },
   {
     icon: Globe,
-    title: "Sites Web",
-    description: "Sites vitrines et applications web sur mesure",
-    color: "text-blue-400"
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-commerce",
-    description: "Solutions de vente en ligne performantes",
-    color: "text-emerald-400"
-  },
-  {
-    icon: Smartphone,
-    title: "Apps Mobile",
-    description: "Applications iOS et Android natives",
-    color: "text-purple-400"
-  },
-  {
-    icon: Target,
-    title: "Conseil Digital",
-    description: "Accompagnement stratégique",
-    color: "text-yellow-400"
+    title: "Développement Web",
+    description: "Sites et applications sur mesure",
+    color: "text-blue-400",
+    highlight: false
   }
 ];
 
@@ -63,9 +36,11 @@ const Contact = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="inline-block mb-4"
           >
             <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
@@ -76,15 +51,18 @@ const Contact = () => {
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             Commençons par un <span className="gradient-text">audit gratuit</span>
           </motion.h2>
+
           <motion.p
             className="text-gray-400 text-lg max-w-2xl mx-auto mb-12"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
             30 minutes pour identifier ce qui peut être automatisé dans votre organisation.
@@ -94,7 +72,8 @@ const Contact = () => {
           {/* Étapes de l'audit */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.3 }}
             className="max-w-xl mx-auto mb-12 space-y-3 text-left"
           >
@@ -106,10 +85,11 @@ const Contact = () => {
             ))}
           </motion.div>
 
-          {/* CTA Calendly principal */}
+          {/* CTA Calendly */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.4 }}
             className="mb-4"
           >
@@ -120,7 +100,7 @@ const Contact = () => {
               className="button-primary px-10 py-4 rounded-full inline-flex items-center gap-3 text-lg font-semibold hover:scale-105 transform transition-all duration-300"
             >
               <CalendarCheck className="w-5 h-5" />
-              <span>Réserver mon audit gratuit — 30 min</span>
+              <span>Réserver mon audit gratuit</span>
               <ArrowRight className="w-5 h-5" />
             </a>
           </motion.div>
@@ -128,15 +108,16 @@ const Contact = () => {
             ✓ 100% gratuit · ✓ Sans engagement · ✓ Réponse sous 24h
           </p>
 
-          {/* Services grid */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-4xl mx-auto mb-12">
+          {/* Services */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto mb-12">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`service-card p-4 rounded-xl text-center transition-colors ${
+                className={`service-card p-4 rounded-xl text-center flex-1 transition-colors ${
                   service.highlight
                     ? 'border-primary/40 bg-primary/5'
                     : 'hover:border-primary/50'
@@ -158,12 +139,13 @@ const Contact = () => {
             <Mail className="w-8 h-8 text-primary mb-3 mx-auto" />
             <h3 className="text-lg font-bold mb-1">Vous préférez l'email ?</h3>
             <p className="text-gray-400 text-sm">
-              Écrivez-nous à{' '}
+              Écrivez-moi à{' '}
               <span className="text-primary font-bold underline">
                 {emailAddress}
               </span>
             </p>
           </motion.div>
+
         </div>
       </div>
     </section>
