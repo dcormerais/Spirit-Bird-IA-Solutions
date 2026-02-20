@@ -93,8 +93,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Votre équipe est trop talentueuse pour passer ses journées
-              sur des tâches répétitives. Je construis les systèmes qui s'en chargent à sa place.
+              Votre équipe est trop talentueuse pour passer ses journées sur des tâches répétitives. Je conçois les systèmes qui s'en chargent automatiquement.
             </motion.p>
 
             <motion.p
