@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Bot, ArrowRight, Brain, Zap, Clock, BarChart2, Users } from 'lucide-react';
+import { Globe, Bot, ArrowRight, Brain, Zap, Clock, BarChart2, Users, Search, Code, GraduationCap, X, Check } from 'lucide-react';
 
 const problems = [
   {
@@ -27,6 +27,46 @@ const featuresIA = [
   "Déploiement en quelques semaines",
   "Suivi et optimisation continue"
 ];
+
+const steps = [
+  {
+    number: '1',
+    icon: Search,
+    title: 'Audit gratuit',
+    description: "On analyse ensemble où vous perdez du temps. Tâches chronophages, outils mal connectés, process inefficaces — on identifie les vrais leviers d'action en 30 minutes."
+  },
+  {
+    number: '2',
+    icon: Code,
+    title: 'Développement',
+    description: "On connecte vos outils et on construit les automatisations qui ont le plus d'impact. Sans perturber vos équipes, sans tout réinventer."
+  },
+  {
+    number: '3',
+    icon: GraduationCap,
+    title: 'Formation',
+    description: "Vous et vos équipes prenez en main les nouveaux process. Documentation claire, accompagnement inclus. Vous pilotez, vous restez autonomes."
+  }
+];
+
+const beforeAfter = {
+  before: [
+    "Tâches manuelles et répétitives chaque jour",
+    "Outils qui ne communiquent pas entre eux",
+    "Process dépendants d'une seule personne",
+    "Heures perdues sur du copier-coller",
+    "Décisions prises sans données fiables",
+    "Recruter pour compenser l'inefficacité"
+  ],
+  after: [
+    "Tâches automatisées de bout en bout",
+    "Outils connectés et centralisés",
+    "Process fiables, même en votre absence",
+    "Temps libéré pour ce qui crée de la valeur",
+    "Données centralisées et décisions éclairées",
+    "Vous scalez sans augmenter vos coûts fixes"
+  ]
+};
 
 const Services = () => {
   return (
@@ -110,7 +150,7 @@ const Services = () => {
         </div>
 
         {/* Cards services */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
 
           {/* Card principale IA */}
           <motion.div
@@ -168,7 +208,7 @@ const Services = () => {
               <h3 className="text-xl font-semibold">Développement Web</h3>
             </div>
             <p className="text-gray-400 mb-6 text-sm flex-grow">
-              Je réalise également des projets web et mobiles sur mesure : sites vitrines, 
+              Je réalise également des projets web et mobiles sur mesure : sites vitrines,
               applications web, e-commerce. Des réalisations solides, pensées pour durer.
             </p>
             <div className="flex items-center gap-2 mt-auto">
@@ -187,8 +227,80 @@ const Services = () => {
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
-
         </div>
+
+        {/* Comment ça marche */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-20"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+            Comment ça marche ?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className="service-card p-8 rounded-xl hover:border-primary/30 transition-all duration-300 text-center"
+              >
+                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+                  <step.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-xs font-semibold text-primary mb-2">Étape {step.number}</div>
+                <h3 className="text-lg font-semibold mb-4">{step.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Avant / Après */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+            Avant et après l'automatisation
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {/* Avant */}
+            <div className="service-card p-8 rounded-xl border-red-500/20 bg-red-500/5">
+              <h3 className="text-lg font-semibold text-red-400 mb-6">Avant</h3>
+              <div className="space-y-4">
+                {beforeAfter.before.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Après */}
+            <div className="service-card p-8 rounded-xl border-primary/30 bg-primary/5">
+              <h3 className="text-lg font-semibold text-primary mb-6">Après</h3>
+              <div className="space-y-4">
+                {beforeAfter.after.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </motion.div>
 
       </div>
     </section>
