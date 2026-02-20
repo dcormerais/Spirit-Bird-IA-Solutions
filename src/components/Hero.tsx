@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Bot, Zap, BarChart2, Workflow } from 'lucide-react';
-import { TypeAnimation } from 'react-type-animation';
 import { HashLink } from 'react-router-hash-link';
 import ParallaxSection from './ParallaxSection';
 import Logo from './Logo';
@@ -69,22 +68,7 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
             >
               <span>Gagnez du temps grâce à </span>
-              <TypeAnimation
-                sequence={[
-                  "l'automatisation IA",
-                  2000,
-                  'vos workflows intelligents',
-                  2000,
-                  'vos agents IA sur-mesure',
-                  2000,
-                  'la suppression des tâches inutiles',
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                className="gradient-text"
-                repeat={Infinity}
-              />
+              <span className="gradient-text">l'automatisation IA</span>
             </motion.h2>
 
             <motion.p
@@ -93,7 +77,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Votre équipe est trop talentueuse pour passer ses journées sur des tâches répétitives. Je                     conçois les systèmes qui s'en chargent automatiquement.
+              Votre équipe est trop talentueuse pour passer ses journées sur des tâches répétitives. Je conçois les systèmes qui s'en chargent automatiquement.
             </motion.p>
 
             <motion.p
@@ -117,7 +101,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="button-primary px-8 py-4 rounded-full inline-flex items-center text-lg font-semibold group"
               >
-                <span>Réserver mon audit gratuit — 30 min</span>
+                <span>Réserver mon audit gratuit</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
 
