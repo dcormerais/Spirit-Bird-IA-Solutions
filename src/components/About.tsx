@@ -77,8 +77,7 @@ const About = () => {
                   du terrain avant de parler d'outils.
                 </p>
                 <p className="text-primary font-medium">
-                  Business et technique dans le même cerveau. C'est ce qui change tout
-                  quand on conçoit une automatisation qui doit vraiment fonctionner.
+                  Comprendre votre métier et construire la solution technique, c'est rarement la même                           personne. C'est pourtant ce qui change tout.
                 </p>
               </div>
 
