@@ -139,16 +139,16 @@ const Projects = () => {
               <div className="relative h-[300px] bg-dark/60 rounded-t-xl overflow-hidden">
                 {'images' in project && project.images && project.images.length > 0 ? (
                   <div className="grid grid-cols-2 gap-2 h-full">
-                    {project.images.map((image, i) => (
-                      <div key={i} className="relative w-full h-full">
-                        <img
-                          src={image}
-                          alt={`${project.title} - Vue ${i + 1}`}
-                          className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    ))}
-                  </div>
+  {project.images.map((image, i) => (
+    <div key={i} className="relative w-full h-full">
+      <img
+        src={image}
+        alt={`${project.title} - Vue ${i + 1}`}
+        className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+      />
+    </div>
+  ))}
+</div>
                 ) : (
                   <img
                     src={'image' in project ? project.image : ''}
