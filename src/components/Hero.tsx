@@ -102,7 +102,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              On commence par comprendre vos vrais problèmes — pas par vous vendre de la technologie.
+              On commence par comprendre vos vrais problèmes, pas par vous vendre de la technologie.
             </motion.p>
 
             <motion.div
