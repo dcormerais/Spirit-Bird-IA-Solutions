@@ -144,7 +144,7 @@ const Projects = () => {
                         key={i}
                         src={image}
                         alt={`${project.title} - Vue ${i + 1}`}
-                        className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover object-[50%_35%] hover:scale-105 transition-transform duration-300"
                       />
                     ))}
                   </div>
@@ -152,7 +152,7 @@ const Projects = () => {
                   <img
                     src={'image' in project ? project.image : ''}
                     alt={project.title}
-                    className="w-full h-full object-contain object-center hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-[50%_35%] hover:scale-105 transition-transform duration-300"
                   />
                 )}
               </div>
