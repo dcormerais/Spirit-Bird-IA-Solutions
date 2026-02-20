@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Facebook, Instagram, Linkedin, Mail, CalendarCheck } from 'lucide-react';
+import { Menu, X, Linkedin, Mail, CalendarCheck } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HashLink } from 'react-router-hash-link';
-import { useLocation } from 'react-router-dom';
 import Logo from './Logo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const location = useLocation();
 
   const emailAddress = 'spirit.bird.ia.solutions@gmail.com';
   const ccEmail = 'dorian.cormerais@gmail.com';
@@ -40,23 +38,14 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Services', hash: '#services' },
-    { name: 'À Propos', hash: '#about', noBreak: true },
+    { name: 'À Propos', hash: '#about' },
     { name: 'Réalisations', hash: '#projets' },
     { name: 'Tarifs', hash: '#tarifs' },
-    { name: 'Maintenance', hash: '#maintenance' },
     { name: 'Contact', hash: '#contact' }
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-blue-500' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-pink-500' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/consultant-ia/', label: 'LinkedIn', color: 'hover:text-blue-600' },
-    {
-      icon: () => <span className="text-2xl font-bold text-gray-400">G</span>,
-      href: 'https://google.com',
-      label: 'Google',
-      color: 'hover:text-gray-200'
-    },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/consultant-ia/', label: 'LinkedIn', color: 'hover:text-blue-400' },
     { icon: FaTiktok, href: 'https://tiktok.com', label: 'TikTok', color: 'hover:text-white' },
     { icon: Mail, href: gmailLink, label: 'Email', color: 'hover:text-yellow-500' }
   ];
@@ -71,12 +60,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-dark/80 backdrop-blur-md border-b border-white/10' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <HashLink
-            smooth
-            to="/#"
-            scroll={scrollWithOffset}
-            className="group flex items-center gap-4"
-          >
+          <HashLink smooth to="/#" scroll={scrollWithOffset} className="group flex items-center gap-4">
             <Logo className="w-12 h-12" />
             <span className="text-2xl tracking-wider font-spiritual">
               <span className="font-light">Spirit Bird</span>{' '}
@@ -104,10 +88,10 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Social Media Icons */}
+            {/* Social Icons */}
             <div className="flex items-center space-x-4 border-l border-white/10 pl-8">
               {socialLinks.map((social) => (
-                <a
+                
                   key={social.label}
                   href={social.href}
                   target="_blank"
@@ -120,8 +104,8 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* CTA Audit Gratuit */}
-            <a
+            {/* CTA */}
+            
               href="https://calendly.com/dorian-cormerais/30min"
               target="_blank"
               rel="noopener noreferrer"
@@ -132,12 +116,9 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-300 hover:text-white transition-colors">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -171,10 +152,9 @@ const Navbar = () => {
                 </HashLink>
               ))}
 
-              {/* Social Media Icons - Mobile */}
               <div className="flex items-center justify-center space-x-6 py-6 border-t border-white/10 mt-4">
                 {socialLinks.map((social) => (
-                  <a
+                  
                     key={social.label}
                     href={social.href}
                     target="_blank"
@@ -187,8 +167,7 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* CTA Audit Gratuit Mobile */}
-              <a
+              
                 href="https://calendly.com/dorian-cormerais/30min"
                 target="_blank"
                 rel="noopener noreferrer"
