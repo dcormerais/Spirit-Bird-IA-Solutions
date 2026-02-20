@@ -136,26 +136,28 @@ const Projects = () => {
               }`}
             >
               {/* Image */}
-              <div className="relative h-[350px] bg-dark/60 rounded-t-xl overflow-hidden">
-                {'images' in project && project.images && project.images.length > 0 ? (
-                  <div className="grid grid-cols-2 h-full">
-                    {project.images.map((image, i) => (
-                      <img
-                        key={i}
-                        src={image}
-                        alt={`${project.title} - Vue ${i + 1}`}
-                        className="w-full h-full object-cover object-[50%_35%] hover:scale-105 transition-transform duration-300"
-                      />
-                    ))}
-                  </div>
-                ) : (
+              {'images' in project && project.images && project.images.length > 0 ? (
+                /* MyMental : 2 colonnes, fond noir, object-contain pour respecter les proportions */
+                <div className="relative h-[350px] bg-black rounded-t-xl overflow-hidden grid grid-cols-2">
+                  {project.images.map((image, i) => (
+                    <img
+                      key={i}
+                      src={image}
+                      alt={`${project.title} - Vue ${i + 1}`}
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                    />
+                  ))}
+                </div>
+              ) : (
+                /* Workflow et Web : scale-down pour voir l'image entière */
+                <div className="relative h-[350px] bg-dark/60 rounded-t-xl overflow-hidden">
                   <img
                     src={'image' in project ? project.image : ''}
                     alt={project.title}
-                    className="w-full h-full object-cover object-[50%_35%] hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-scale-down hover:scale-105 transition-transform duration-300"
                   />
-                )}
-              </div>
+                </div>
+              )}
 
               {/* Contenu */}
               <div className="flex-grow flex flex-col p-8">
