@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Star, Globe, Smartphone, Bot, Zap } from 'lucide-react';
+import { ExternalLink, Star, Zap } from 'lucide-react';
 
 const projects = [
   {
@@ -18,7 +18,7 @@ const projects = [
       'Agent IA pour rédaction des emails'
     ],
     userExperience: [
-      'Étape d\'approbation par email (1 clic)',
+      "Étape d'approbation par email en 1 clic",
       'Emails fournisseurs personnalisés par IA',
       'Zéro saisie manuelle',
       'Historique des actions automatisé'
@@ -67,7 +67,7 @@ const projects = [
       'Interface fluide et intuitive',
       'Transitions personnalisées',
       'Notifications contextuelles',
-      'Gestion d\'état avancée'
+      "Gestion d'état avancée"
     ],
     technologies: ['React Native', 'Node.js', 'WebSocket']
   }
@@ -136,24 +136,23 @@ const Projects = () => {
               }`}
             >
               {/* Image */}
-              <div className="relative h-[300px] bg-dark/60 rounded-t-xl overflow-hidden">
+              <div className="relative h-[350px] bg-dark/60 rounded-t-xl overflow-hidden">
                 {'images' in project && project.images && project.images.length > 0 ? (
-                  <div className="grid grid-cols-2 gap-2 h-full">
-  {project.images.map((image, i) => (
-    <div key={i} className="relative w-full h-full">
-      <img
-        src={image}
-        alt={`${project.title} - Vue ${i + 1}`}
-        className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-      />
-    </div>
-  ))}
-</div>
+                  <div className="grid grid-cols-2 h-full">
+                    {project.images.map((image, i) => (
+                      <img
+                        key={i}
+                        src={image}
+                        alt={`${project.title} - Vue ${i + 1}`}
+                        className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                      />
+                    ))}
+                  </div>
                 ) : (
                   <img
                     src={'image' in project ? project.image : ''}
                     alt={project.title}
-                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain object-center hover:scale-105 transition-transform duration-300"
                   />
                 )}
               </div>
