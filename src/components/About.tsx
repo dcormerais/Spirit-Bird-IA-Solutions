@@ -1,66 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Rocket, Users, Wrench, Globe, Zap, Brain, Bot, Smartphone, Target } from 'lucide-react';
+import { Zap, Brain, Globe, Clock } from 'lucide-react';
 import ParallaxSection from './ParallaxSection';
 
 const stats = [
-  { value: '5+', label: 'Années d\'expérience', icon: Code },
-  { value: '50+', label: 'Projets réalisés', icon: Rocket },
-  { value: '100%', label: 'Satisfaction client', icon: Users },
-  { value: '24/7', label: 'Support technique', icon: Wrench }
+  { value: '5+', label: "Années d'expérience", icon: Clock },
+  { value: '3', label: 'Expertises combinées', icon: Brain },
+  { value: '100%', label: 'Remote, France & international', icon: Globe },
+  { value: '2-6', label: 'Semaines de mise en production', icon: Zap }
 ];
 
-const technologies = {
-  automation: {
-    title: "Automatisation & IA",
-    items: [
-      "Make (Integromat)", "n8n", "Zapier", "LangChain",
-      "OpenAI API", "Agents IA", "Webhooks", "API REST"
-    ]
-  },
-  frontend: {
-    title: "Front-End",
-    items: [
-      "React", "Vue.js", "Angular", "Svelte",
-      "Next.js", "Nuxt.js", "Tailwind", "TypeScript"
-    ]
-  },
-  backend: {
-    title: "Back-End",
-    items: [
-      "Node.js", "Python", "Java", "Go",
-      "Ruby", "PHP", "C#", "Rust"
-    ]
-  },
-  database: {
-    title: "Base de Données & DevOps",
-    items: [
-      "PostgreSQL", "MongoDB", "Supabase", "Firebase",
-      "Docker", "CI/CD", "AWS", "Azure"
-    ]
-  }
-};
+const tools = [
+  "Make", "n8n", "Zapier", "LangChain",
+  "OpenAI API", "Agents IA", "Webhooks", "API REST"
+];
 
-const services = [
+const approche = [
   {
-    icon: Bot,
-    title: "Solutions IA",
-    description: "Automatisation & workflows intelligents"
+    title: "Le problème d'abord",
+    description: "Chaque mission commence par une analyse de vos process réels. Pas de solution cherchant un problème."
   },
   {
-    icon: Globe,
-    title: "Sites Web",
-    description: "Sites vitrines et applications web sur mesure"
+    title: "Vos outils existants",
+    description: "On connecte ce que vous avez déjà. CRM, email, Notion, Airtable... pas besoin de tout réinventer."
   },
   {
-    icon: Smartphone,
-    title: "Apps Mobile",
-    description: "Applications iOS et Android natives"
-  },
-  {
-    icon: Target,
-    title: "Marketing",
-    description: "Stratégie digitale et optimisation"
+    title: "Vous restez autonomes",
+    description: "Chaque livraison s'accompagne d'une documentation claire. Vous pilotez, je construis."
   }
 ];
 
@@ -70,6 +36,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ParallaxSection offset={20}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
             {/* Colonne gauche */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -78,11 +45,12 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
+              {/* Photo + nom */}
               <div className="flex items-center gap-8">
-                <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary/20 mt-12">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary/20 mt-12 flex-shrink-0">
                   <img
                     src="/Images/dodo.jpg"
-                    alt="Dorian"
+                    alt="Dorian Cormerais"
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 ring-2 ring-primary/10 rounded-full"></div>
@@ -92,54 +60,49 @@ const About = () => {
                     Dorian <span className="gradient-text">Cormerais</span>
                   </h2>
                   <p className="text-gray-400">
-                    Ingénieur IA & Développeur Full Stack
+                    Ingénieur IA et Développeur Full Stack
                   </p>
                 </div>
               </div>
 
+              {/* Texte de présentation */}
               <div className="space-y-4 text-gray-300">
                 <p>
-                  J'aurais pu rester développeur freelance.
+                  Mon parcours ne ressemble pas à celui d'un ingénieur classique.
+                  Avant de coder des systèmes d'automatisation, j'ai vendu, négocié,
+                  piloté des campagnes marketing et analysé des données pour des entreprises très différentes.
                 </p>
                 <p>
-                  Mais après avoir travaillé dans la vente, le marketing digital, 
-                  puis la data et l'IA, j'ai réalisé une chose : la technologie ne 
-                  sert à rien si elle ne résout pas un vrai problème terrain.
+                  Ce que ça m'a appris : la plupart des problèmes qu'on croit techniques
+                  sont en réalité des problèmes d'organisation. Et la technologie,
+                  quand elle est bien utilisée, les résout silencieusement.
                 </p>
                 <p>
-                  Alors j'ai fondé <span className="text-primary font-semibold">Spirit Bird IA Solutions</span> — 
-                  une agence spécialisée dans l'automatisation des workflows pour PME.
-                  Je pars toujours du problème, jamais de la technologie.
+                  C'est avec cette conviction que j'ai fondé{' '}
+                  <span className="text-primary font-semibold">Spirit Bird IA Solutions</span>.
+                  Une structure légère, orientée résultats, qui part toujours
+                  du terrain avant de parler d'outils.
                 </p>
                 <p className="text-primary font-medium">
-                  Ma double casquette business + technique, c'est votre garantie de solutions 
-                  qui fonctionnent vraiment sur le terrain.
+                  Business et technique dans le même cerveau. C'est ce qui change tout
+                  quand on conçoit une automatisation qui doit vraiment fonctionner.
                 </p>
               </div>
 
-              {/* Technologies */}
-              <div className="grid grid-cols-1 gap-6">
-                {Object.values(technologies).map((category, index) => (
-                  <div
-                    key={index}
-                    className={`service-card p-6 rounded-xl transition-all duration-300 ${
-                      index === 0 ? 'border-primary/30 bg-primary/5' : 'hover:border-primary/20'
-                    }`}
-                  >
-                    <h3 className="font-semibold mb-4 flex items-center gap-2">
-                      {index === 0 && <Zap className="w-4 h-4 text-primary" />}
-                      {category.title}
-                    </h3>
-                    <div className="grid grid-cols-4 gap-3">
-                      {category.items.map((tech, techIndex) => (
-                        <div key={techIndex} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                          <span className="text-sm text-gray-300">{tech}</span>
-                        </div>
-                      ))}
+              {/* Outils IA */}
+              <div className="service-card p-6 rounded-xl border-primary/30 bg-primary/5">
+                <h3 className="font-semibold mb-4 flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-primary" />
+                  Outils et technologies IA
+                </h3>
+                <div className="grid grid-cols-4 gap-3">
+                  {tools.map((tool, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+                      <span className="text-sm text-gray-300">{tool}</span>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </motion.div>
 
@@ -169,43 +132,22 @@ const About = () => {
                 ))}
               </div>
 
-              {/* Services */}
+              {/* Approche */}
               <div className="service-card p-6 rounded-xl hover:border-primary/20 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-6">Domaines d'Expertise</h3>
-                <div className="grid grid-cols-2 gap-6">
-                  {services.map((service, index) => (
-                    <div
-                      key={index}
-                      className={`flex flex-col items-center text-center p-4 rounded-lg h-[120px] justify-center transition-all duration-300 ${
-                        index === 0
-                          ? 'bg-primary/10 border border-primary/20'
-                          : 'bg-white/5 hover:bg-white/10'
-                      }`}
-                    >
-                      <service.icon className="w-8 h-8 text-primary mb-3" />
-                      <h4 className="font-medium mb-1">{service.title}</h4>
-                      <p className="text-sm text-gray-400">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-6">Comment je travaille</h3>
+                <div className="space-y-6">
+                  {approche.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 text-primary font-bold text-sm">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-white mb-1">{item.title}</h4>
+                        <p className="text-sm text-gray-400">{item.description}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Approche */}
-              <div className="service-card p-6 rounded-xl hover:border-primary/20 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-4">Mon Approche</h3>
-                <ul className="grid grid-cols-1 gap-4">
-                  {[
-                    "Je pars toujours du problème, jamais de la technologie",
-                    "Audit gratuit pour identifier les vrais leviers d'automatisation",
-                    "Solutions intégrées à vos outils existants, sans tout réinventer",
-                    "Formation et accompagnement pour l'autonomie de vos équipes"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-300">{item}</p>
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               {/* CTA */}
@@ -215,11 +157,14 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 w-full justify-center"
               >
-                <span>Réserver mon audit gratuit — 30 min</span>
+                <span>Réserver mon audit gratuit</span>
                 <Zap className="w-4 h-4" />
               </a>
-              <p className="text-gray-500 text-sm text-center -mt-4">✓ Gratuit · ✓ Sans engagement · ✓ Diagnostic concret</p>
+              <p className="text-gray-500 text-sm text-center -mt-4">
+                ✓ Gratuit · ✓ Sans engagement · ✓ Diagnostic concret
+              </p>
             </motion.div>
+
           </div>
         </ParallaxSection>
       </div>
