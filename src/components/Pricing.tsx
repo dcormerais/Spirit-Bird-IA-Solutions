@@ -13,7 +13,6 @@ const plans = [
       '2 à 3 outils connectés',
       'Formation et documentation incluses',
       'Mise en production en 1 à 2 semaines',
-      'Maintenance minimum 3 mois'
     ],
     highlight: false,
     cta: 'Démarrer mon projet'
@@ -29,7 +28,6 @@ const plans = [
       'Dashboard de suivi automatisé',
       'Formation équipe incluse',
       'Mise en production en 2 à 4 semaines',
-      'Maintenance minimum 3 mois'
     ],
     highlight: true,
     cta: 'Démarrer mon projet'
@@ -45,7 +43,6 @@ const plans = [
       'Intégrations illimitées',
       'Dashboard et reporting avancés',
       'Formation et accompagnement complets',
-      'Maintenance minimum 3 mois'
     ],
     highlight: false,
     cta: 'Discutons de votre projet'
