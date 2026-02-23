@@ -42,7 +42,7 @@ const About = () => {
               <div className="flex items-center gap-8">
                 <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary/20 mt-12 flex-shrink-0">
                   <img
-                    src="/Images/dodo.jpg"
+                    src="/Images/dorian.jpg"
                     alt="Dorian Cormerais"
                     className="w-full h-full object-cover object-top"
                   />
