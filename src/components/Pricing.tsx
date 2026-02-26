@@ -5,44 +5,44 @@ import { Zap, ArrowRight, Check } from 'lucide-react';
 const plans = [
   {
     name: 'Starter',
-    priceRange: '700 à 1 200€',
-    maintenance: '250€/mois',
-    description: 'Pour automatiser un premier process et mesurer concrètement le gain de temps sur vos opérations.',
+    price: 'À partir de 700€',
+    suivi: 'Maintenance : 250€/mois — API & assistance technique',
+    description: 'Pour tester l\'automatisation sur un process précis et mesurer concrètement ce que ça change dans votre quotidien.',
     features: [
       '1 workflow automatisé sur mesure',
       '2 à 3 outils connectés',
-      'Formation et documentation incluses',
-      'Mise en production en 1 à 2 semaines',
+      'Documentation et formation incluses',
+      'Mis en production en 1 à 2 semaines',
     ],
     highlight: false,
     cta: 'Démarrer mon projet'
   },
   {
     name: 'Growth',
-    priceRange: '2 000 à 4 000€',
-    maintenance: '600€/mois',
-    description: 'Le coeur de notre offre. Pour les entreprises qui veulent automatiser plusieurs process et gagner en efficacité opérationnelle.',
+    price: 'À partir de 2 000€',
+    suivi: 'Maintenance : 600€/mois — API & assistance technique',
+    description: 'Pour les entreprises prêtes à automatiser plusieurs process clés et libérer leur équipe des tâches répétitives.',
     features: [
-      'Workflow avancé multi-étapes',
+      'Workflows multi-étapes sur mesure',
       'Intégrations multiples (CRM, email, Notion...)',
       'Dashboard de suivi automatisé',
       'Formation équipe incluse',
-      'Mise en production en 2 à 4 semaines',
+      'Mis en production en 2 à 4 semaines',
     ],
     highlight: true,
     cta: 'Démarrer mon projet'
   },
   {
     name: 'Scale',
-    priceRange: '5 000 à 12 000€',
-    maintenance: '1 200€/mois',
+    price: 'Sur devis',
+    suivi: 'Maintenance sur devis — API & assistance technique',
     description: 'Pour les projets complexes nécessitant une architecture complète avec des systèmes autonomes et décisionnels.',
     features: [
       'Architecture complète sur mesure',
       'Systèmes autonomes et décisionnels',
       'Intégrations illimitées',
       'Dashboard et reporting avancés',
-      'Formation et accompagnement complets',
+      'Accompagnement complet et continu',
     ],
     highlight: false,
     cta: 'Discutons de votre projet'
@@ -84,7 +84,7 @@ const Pricing = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Des tarifs indicatifs selon la complexité de votre projet. Chaque mission fait l'objet d'un devis personnalisé après audit gratuit.
+            Chaque projet commence par un audit gratuit. Je prends le temps de comprendre vos process en profondeur — pour ne vous proposer que ce qui est vraiment pertinent à automatiser.
           </motion.p>
         </div>
 
@@ -114,12 +114,10 @@ const Pricing = () => {
               <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
               <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
 
-              <div className="mb-2">
-                <span className="text-3xl font-bold text-primary">{plan.priceRange}</span>
+              <div className="mb-1">
+                <span className="text-3xl font-bold text-primary">{plan.price}</span>
               </div>
-              <p className="text-sm text-gray-400 mb-8">
-                Maintenance : {plan.maintenance}
-              </p>
+              <p className="text-sm text-gray-400 mb-8">{plan.suivi}</p>
 
               <div className="space-y-3 flex-grow mb-8">
                 {plan.features.map((feature, i) => (
@@ -147,16 +145,22 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Note bas */}
-        <motion.p
-          className="text-center text-gray-500 text-sm mt-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        {/* Bloc différenciateur */}
+        <motion.div
+          className="mt-16 service-card rounded-xl p-8 border-primary/20 bg-primary/5 max-w-3xl mx-auto text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Tous les tarifs sont indicatifs et hors taxes. Chaque projet fait l'objet d'un devis personnalisé après audit gratuit.
-        </motion.p>
+          <p className="text-white font-semibold text-lg mb-2">
+            Pas d'automatisation inutile.
+          </p>
+          <p className="text-gray-400 text-sm">
+            Avant de proposer quoi que ce soit, je prends le temps de cartographier vos process réels.
+            Mon objectif n'est pas de tout automatiser — c'est d'identifier les 20% d'actions qui représentent 80% de votre charge inutile, et de les supprimer.
+          </p>
+        </motion.div>
 
       </div>
     </section>
