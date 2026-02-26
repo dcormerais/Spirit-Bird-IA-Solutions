@@ -15,7 +15,7 @@ const approche = [
   },
   {
     title: "Vos outils existants",
-    description: "On connecte ce que vous avez déjà. CRM, email, Notion, Airtable... pas besoin de tout réinventer."
+    description: "On connecte ce que vous avez déjà — CRM, email, Notion, Airtable, Google Sheets, Slack, HubSpot, Calendly, et bien d'autres. Pas besoin de tout réinventer."
   },
   {
     title: "Vous restez autonomes",
@@ -72,17 +72,19 @@ const About = () => {
                 </p>
                 <p>
                   C'est avec cette conviction que j'ai fondé{' '}
-                  <span className="text-primary font-semibold">Spirit Bird IA Solutions</span>.
+                  <span className="font-semibold text-white">Spirit Bird IA Solutions</span>.
                   Une structure légère, orientée résultats, qui part toujours
                   du terrain avant de parler d'outils.
                 </p>
-                <p className="text-primary font-medium">
-                  Celui qui comprend votre métier n'est généralement pas celui qui construit la solution technique. Et c'est justement ce qui change tout.
-                  <br /><br />
-                  Ici, c'est le cas.
-                  <br /><br />
-                  Votre métier, je le comprends. Votre solution, je la construis.
-                </p>
+                <div className="border-l-2 border-primary pl-4 mt-2 space-y-2">
+                  <p className="text-gray-300">
+                    Celui qui comprend votre métier n'est généralement pas celui qui construit la solution technique. Et c'est justement ce qui change tout.
+                  </p>
+                  <p className="text-white font-semibold">Ici, c'est le cas.</p>
+                  <p className="text-primary font-medium">
+                    Votre métier, je le comprends. Votre solution, je la construis.
+                  </p>
+                </div>
               </div>
 
               {/* Outils IA */}
