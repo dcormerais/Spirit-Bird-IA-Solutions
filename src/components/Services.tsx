@@ -64,7 +64,7 @@ const beforeAfter = {
     "Process fiables, même en votre absence",
     "Temps libéré pour ce qui crée de la valeur",
     "Données centralisées et décisions éclairées",
-    "Vous scalez sans augmenter vos coûts fixes"
+    "Vous scalez sans augmenter vos coûts fixes — selon la taille du workflow automatisé"
   ]
 };
 
@@ -100,8 +100,11 @@ const Services = () => {
             ))}
           </div>
           <div className="text-center">
-            <p className="text-2xl font-bold gradient-text mb-8">
-              On règle ça. En quelques semaines seulement.
+            <p className="text-2xl font-bold gradient-text mb-2">
+              On règle ça.
+            </p>
+            <p className="text-gray-400 text-sm mb-8">
+              En quelques semaines, selon la complexité et le nombre de workflows à automatiser.
             </p>
             <a
               href="https://calendly.com/dorian-cormerais/30min"
