@@ -53,7 +53,7 @@ const plans = [
     price: 'Sur devis',
     maintenance: 'Sur devis',
     maintenanceDetail: 'Infrastructure API, optimisations continues, suivi de performance et support dédié',
-    description: 'Pour les projets ambitieux nécessitant une architecture sur mesure, des systèmes autonomes et un accompagnement de bout en bout.',
+    description: 'Pour les projets ambitieux nécessitant une architecture sur mesure, des systèmes autonomes et un accompagnement intégral.',
     metrics: [
       'Gain de temps estimé : 40h+ / mois',
       'Processus critiques audités avant mise en production',
