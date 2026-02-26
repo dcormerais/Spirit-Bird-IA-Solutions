@@ -64,7 +64,7 @@ const beforeAfter = {
     "Process fiables, même en votre absence",
     "Temps libéré pour ce qui crée de la valeur",
     "Données centralisées et décisions éclairées",
-    "Vous scalez sans augmenter vos coûts fixes — selon la taille du workflow automatisé"
+    "Vous scalez sans augmenter vos coûts fixes"
   ]
 };
 
