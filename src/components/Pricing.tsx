@@ -33,7 +33,7 @@ const plans = [
     description: 'Pour les entreprises qui veulent automatiser plusieurs process et gagner en efficacité opérationnelle.',
     metrics: [
       'Gain de temps estimé : 15 à 35h / mois',
-      'Réduction des tâches répétitives : 60 à 80%',
+      'Réduction des tâches répétitives et optimisables : 60 à 80%',
       'ROI typique : 2 à 4 mois',
     ],
     features: [
@@ -196,6 +196,9 @@ const Pricing = () => {
                 <span>{plan.cta}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
+              <p className="text-xs text-gray-500 text-center mt-3">
+                Après audit gratuit, plan personnalisé fourni.
+              </p>
             </motion.div>
           ))}
         </div>
