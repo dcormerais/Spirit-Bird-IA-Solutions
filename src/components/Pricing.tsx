@@ -8,7 +8,7 @@ const plans = [
     priceLabel: 'à partir de',
     price: '1 200€ HT',
     maintenance: 'à partir de 250€ / mois',
-    maintenanceDetail: 'Infrastructure API et assistance technique',
+    maintenanceDetail: 'Infrastructure API, surveillance technique et support email sous 48h',
     description: 'Pour tester l\'automatisation sur un process précis et mesurer concrètement ce que ça change.',
     metrics: [
       'Gain de temps estimé : 3 à 12h / mois',
@@ -29,7 +29,7 @@ const plans = [
     priceLabel: 'à partir de',
     price: '2 500€ HT',
     maintenance: 'à partir de 500€ / mois',
-    maintenanceDetail: 'Infrastructure API et assistance technique',
+    maintenanceDetail: 'Infrastructure API, surveillance technique, ajustements mineurs et support prioritaire sous 24h',
     description: 'Pour les entreprises qui veulent automatiser plusieurs process et gagner en efficacité opérationnelle.',
     metrics: [
       'Gain de temps estimé : 15 à 35h / mois',
@@ -52,7 +52,7 @@ const plans = [
     priceLabel: null,
     price: 'Sur devis',
     maintenance: 'Sur devis',
-    maintenanceDetail: 'Infrastructure API et assistance technique',
+    maintenanceDetail: 'Infrastructure API, optimisations continues, suivi de performance et support dédié',
     description: 'Pour les projets ambitieux nécessitant une architecture sur mesure, des systèmes autonomes et un accompagnement de bout en bout.',
     metrics: [
       'Gain de temps estimé : 40h+ / mois',
