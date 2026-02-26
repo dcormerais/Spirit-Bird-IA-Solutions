@@ -114,7 +114,7 @@ const Pricing = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -128,8 +128,8 @@ const Pricing = () => {
                   : ''
               }`}
             >
-              {/* Badge */}
-              <div className="min-h-[32px] mb-2">
+              {/* Badge — hauteur fixe pour aligner le reste */}
+              <div className="h-8 mb-2 flex items-center">
                 {plan.highlight && (
                   <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
                     ⭐ Le plus demandé
@@ -137,15 +137,15 @@ const Pricing = () => {
                 )}
               </div>
 
-              {/* Nom + description */}
+              {/* Nom + description — hauteur fixe */}
               <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-              <p className="text-gray-400 text-sm mb-6 min-h-[48px]">{plan.description}</p>
+              <p className="text-gray-400 text-sm mb-6 h-16 line-clamp-3">{plan.description}</p>
 
-              {/* Prix — aligné sur toutes les cartes */}
-              <div className="min-h-[72px] flex flex-col justify-end mb-1">
-                {plan.priceLabel && (
-                  <p className="text-xs text-gray-500 mb-1">{plan.priceLabel}</p>
-                )}
+              {/* Prix — toujours 2 lignes, même pour "Sur devis" */}
+              <div className="h-16 flex flex-col justify-end mb-1">
+                <p className="text-xs text-gray-500 mb-1">
+                  {plan.priceLabel ?? '\u00a0'}
+                </p>
                 <span className="text-3xl font-bold text-primary leading-none">{plan.price}</span>
               </div>
 
