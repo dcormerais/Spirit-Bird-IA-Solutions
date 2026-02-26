@@ -5,37 +5,40 @@ import { Zap, ArrowRight, Check } from 'lucide-react';
 const plans = [
   {
     name: 'Starter',
-    price: 'À partir de 700€',
-    suivi: 'Maintenance : 250€/mois — API & assistance technique',
-    description: 'Pour tester l\'automatisation sur un process précis et mesurer concrètement ce que ça change dans votre quotidien.',
+    price: 'À partir de 800€ HT',
+    maintenance: 'À partir de 250€ / mois',
+    maintenanceDetail: 'Infrastructure API et assistance technique',
+    description: 'Pour automatiser un premier process ciblé et mesurer concrètement le gain de temps dans votre quotidien.',
     features: [
       '1 workflow automatisé sur mesure',
       '2 à 3 outils connectés',
       'Documentation et formation incluses',
-      'Mis en production en 1 à 2 semaines',
+      'Mise en production en 1 à 2 semaines',
     ],
     highlight: false,
     cta: 'Démarrer mon projet'
   },
   {
     name: 'Growth',
-    price: 'À partir de 2 000€',
-    suivi: 'Maintenance : 600€/mois — API & assistance technique',
+    price: 'À partir de 1 500€ HT',
+    maintenance: 'À partir de 500€ / mois',
+    maintenanceDetail: 'Infrastructure API et assistance technique',
     description: 'Pour les entreprises prêtes à automatiser plusieurs process clés et libérer leur équipe des tâches répétitives.',
     features: [
       'Workflows multi-étapes sur mesure',
       'Intégrations multiples (CRM, email, Notion...)',
       'Dashboard de suivi automatisé',
       'Formation équipe incluse',
-      'Mis en production en 2 à 4 semaines',
+      'Mise en production en 2 à 4 semaines',
     ],
     highlight: true,
     cta: 'Démarrer mon projet'
   },
   {
     name: 'Scale',
-    price: 'Sur devis',
-    suivi: 'Maintenance sur devis — API & assistance technique',
+    price: 'À partir de 3 000€ HT',
+    maintenance: 'Sur devis',
+    maintenanceDetail: 'Infrastructure API et assistance technique',
     description: 'Pour les projets complexes nécessitant une architecture complète avec des systèmes autonomes et décisionnels.',
     features: [
       'Architecture complète sur mesure',
@@ -84,7 +87,7 @@ const Pricing = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Chaque projet commence par un audit gratuit. Je prends le temps de comprendre vos process en profondeur — pour ne vous proposer que ce qui est vraiment pertinent à automatiser.
+            Chaque projet commence par un audit gratuit. Je prends le temps de comprendre vos process en profondeur pour ne vous proposer que ce qui est vraiment pertinent à automatiser.
           </motion.p>
         </div>
 
@@ -115,9 +118,13 @@ const Pricing = () => {
               <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
 
               <div className="mb-1">
-                <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                <span className="text-2xl font-bold text-primary">{plan.price}</span>
               </div>
-              <p className="text-sm text-gray-400 mb-8">{plan.suivi}</p>
+
+              <div className="mb-8 pb-6 border-b border-white/5">
+                <p className="text-sm font-medium text-gray-300">{plan.maintenance}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{plan.maintenanceDetail}</p>
+              </div>
 
               <div className="space-y-3 flex-grow mb-8">
                 {plan.features.map((feature, i) => (
@@ -157,10 +164,22 @@ const Pricing = () => {
             Pas d'automatisation inutile.
           </p>
           <p className="text-gray-400 text-sm">
-            Avant de proposer quoi que ce soit, je prends le temps de cartographier vos process réels.
-            Mon objectif n'est pas de tout automatiser — c'est d'identifier les 20% d'actions qui représentent 80% de votre charge inutile, et de les supprimer.
+            Avant de proposer quoi que ce soit, je cartographie vos process réels.
+            Mon objectif n'est pas de tout automatiser : c'est d'identifier les actions
+            qui représentent l'essentiel de votre charge inutile, et de les supprimer.
           </p>
         </motion.div>
+
+        {/* Note bas */}
+        <motion.p
+          className="text-center text-gray-500 text-sm mt-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          Tous les tarifs sont indicatifs et hors taxes. Un devis personnalisé est établi après audit gratuit.
+        </motion.p>
 
       </div>
     </section>
