@@ -1,14 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, ArrowRight, Check } from 'lucide-react';
+import { Zap, ArrowRight, Check, TrendingUp } from 'lucide-react';
 
 const plans = [
   {
     name: 'Starter',
-    price: 'À partir de 800€ HT',
-    maintenance: 'À partir de 250€ / mois',
+    priceLabel: 'à partir de',
+    price: '1 200€ HT',
+    maintenance: 'à partir de 250€ / mois',
     maintenanceDetail: 'Infrastructure API et assistance technique',
     description: 'Pour tester l\'automatisation sur un process précis et mesurer concrètement ce que ça change.',
+    metrics: [
+      'Gain de temps estimé : 5 à 15h / mois',
+      'ROI typique : 3 à 5 mois',
+    ],
     features: [
       '1 workflow automatisé sur mesure',
       '2 à 3 outils connectés',
@@ -21,10 +26,16 @@ const plans = [
   },
   {
     name: 'Growth',
-    price: 'À partir de 1 500€ HT',
-    maintenance: 'À partir de 500€ / mois',
+    priceLabel: 'à partir de',
+    price: '2 500€ HT',
+    maintenance: 'à partir de 500€ / mois',
     maintenanceDetail: 'Infrastructure API et assistance technique',
     description: 'Pour les entreprises qui veulent automatiser plusieurs process et gagner en efficacité opérationnelle.',
+    metrics: [
+      'Gain de temps estimé : 20 à 40h / mois',
+      'Réduction des tâches manuelles : 60 à 80%',
+      'ROI typique : 2 à 4 mois',
+    ],
     features: [
       'Workflows multi-étapes sur mesure',
       'Intégrations multiples (CRM, email, Notion...)',
@@ -38,10 +49,16 @@ const plans = [
   },
   {
     name: 'Scale',
+    priceLabel: null,
     price: 'Sur devis',
     maintenance: 'Sur devis',
     maintenanceDetail: 'Infrastructure API et assistance technique',
     description: 'Pour les projets ambitieux nécessitant une architecture sur mesure, des systèmes autonomes et un accompagnement de bout en bout.',
+    metrics: [
+      'Gain de temps estimé : 40h+ / mois',
+      'Automatisation de processus critiques',
+      'ROI mesuré et suivi en continu',
+    ],
     features: [
       'Architecture complète sur mesure',
       'Systèmes autonomes et décisionnels',
@@ -121,13 +138,29 @@ const Pricing = () => {
               <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
               <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
 
-              <div className="mb-1">
-                <span className="text-2xl font-bold text-primary">{plan.price}</span>
+              {/* Prix aligné */}
+              <div className="mb-1 min-h-[64px] flex flex-col justify-end">
+                {plan.priceLabel && (
+                  <p className="text-xs text-gray-500 mb-0.5">{plan.priceLabel}</p>
+                )}
+                <span className="text-3xl font-bold text-primary">{plan.price}</span>
               </div>
 
-              <div className="mb-8 pb-6 border-b border-white/5">
+              <div className="mb-6 pb-6 border-b border-white/5">
+                <p className="text-xs text-gray-500 mb-0.5">maintenance</p>
                 <p className="text-sm font-medium text-gray-300">{plan.maintenance}</p>
                 <p className="text-xs text-gray-500 mt-0.5">{plan.maintenanceDetail}</p>
+              </div>
+
+              {/* Métriques valeur business */}
+              <div className="mb-6 p-4 rounded-lg bg-primary/5 border border-primary/10 space-y-2">
+                <p className="text-xs font-semibold text-primary flex items-center gap-1.5 mb-2">
+                  <TrendingUp className="w-3.5 h-3.5" />
+                  Impact estimé
+                </p>
+                {plan.metrics.map((metric, i) => (
+                  <p key={i} className="text-xs text-gray-300">{metric}</p>
+                ))}
               </div>
 
               <div className="space-y-3 flex-grow mb-8">
