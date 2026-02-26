@@ -36,11 +36,11 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-6"
             >
               {/* Photo + nom */}
-              <div className="flex items-center gap-8">
-                <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary/20 mt-12 flex-shrink-0">
+              <div className="flex items-center gap-6">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
                   <img
                     src="/Images/dorian.jpg"
                     alt="Dorian Cormerais"
@@ -49,7 +49,7 @@ const About = () => {
                   <div className="absolute inset-0 ring-2 ring-primary/10 rounded-full"></div>
                 </div>
                 <div>
-                  <h2 className="text-4xl font-bold mb-2">
+                  <h2 className="text-4xl font-bold mb-1">
                     Dorian <span className="gradient-text">Cormerais</span>
                   </h2>
                   <p className="text-gray-400">
@@ -76,13 +76,13 @@ const About = () => {
                   Une structure légère, orientée résultats, qui part toujours
                   du terrain avant de parler d'outils.
                 </p>
-              <p className="text-primary font-medium">
-  Celui qui comprend votre métier n'est généralement pas celui qui construit la solution technique. Et c'est justement ce qui change tout.
-  <br /><br />
-  Ici, c'est le cas.
-  <br /><br />
-  Votre métier, je le comprends. Votre solution, je la construis.
-</p>
+                <p className="text-primary font-medium">
+                  Celui qui comprend votre métier n'est généralement pas celui qui construit la solution technique. Et c'est justement ce qui change tout.
+                  <br /><br />
+                  Ici, c'est le cas.
+                  <br /><br />
+                  Votre métier, je le comprends. Votre solution, je la construis.
+                </p>
               </div>
 
               {/* Outils IA */}
@@ -108,7 +108,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-6 lg:pt-0"
             >
               {/* Approche */}
               <div className="service-card p-6 rounded-xl hover:border-primary/20 transition-all duration-300">
@@ -126,6 +126,20 @@ const About = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Stats / chiffres clés */}
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { value: "5+", label: "ans d'expérience terrain" },
+                  { value: "20+", label: "projets livrés" },
+                  { value: "100%", label: "orienté résultats" },
+                ].map((stat, index) => (
+                  <div key={index} className="service-card p-4 rounded-xl text-center bg-primary/5 border-primary/20">
+                    <div className="text-2xl font-bold gradient-text mb-1">{stat.value}</div>
+                    <div className="text-xs text-gray-400 leading-tight">{stat.label}</div>
+                  </div>
+                ))}
               </div>
 
               {/* CTA */}
