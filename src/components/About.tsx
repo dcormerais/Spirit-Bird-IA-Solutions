@@ -4,8 +4,14 @@ import { Zap } from 'lucide-react';
 import ParallaxSection from './ParallaxSection';
 
 const tools = [
-  "Make", "n8n", "Zapier", "LangChain",
-  "OpenAI API", "Agents IA", "Webhooks", "API REST"
+  { name: "Make", desc: "automatisation visuelle" },
+  { name: "n8n", desc: "workflows open-source" },
+  { name: "Zapier", desc: "connexion d'apps" },
+  { name: "LangChain", desc: "gestion des flux IA" },
+  { name: "OpenAI API", desc: "intelligence artificielle" },
+  { name: "Agents IA", desc: "systèmes autonomes" },
+  { name: "Webhooks", desc: "connexion entre outils" },
+  { name: "API REST", desc: "intégration sur mesure" },
 ];
 
 const approche = [
@@ -93,11 +99,14 @@ const About = () => {
                   <Zap className="w-4 h-4 text-primary" />
                   Outils et technologies IA
                 </h3>
-                <div className="grid grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 gap-3">
                   {tools.map((tool, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
-                      <span className="text-sm text-gray-300">{tool}</span>
+                    <div key={index} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                      <div>
+                        <span className="text-sm text-gray-300 font-medium">{tool.name}</span>
+                        <span className="text-xs text-gray-500 ml-1.5">{tool.desc}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
