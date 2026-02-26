@@ -77,7 +77,7 @@ const About = () => {
                   du terrain avant de parler d'outils.
                 </p>
                 <p className="text-primary font-medium">
-                  Celui qui comprend votre métier n'est généralement pas celui qui construit la solution                        technique. Et c'est justement ce qui change tout.
+                  Celui qui comprend votre métier n'est généralement pas celui qui construit la solution                       technique. Et c'est justement ce qui change tout. Ici, c'est le cas. Votre métier, je le                      comprends. Votre solution, je la construis.
                 </p>
               </div>
 
