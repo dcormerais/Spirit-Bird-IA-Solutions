@@ -85,7 +85,7 @@ const App: React.FC = () => {
                   className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold hover:bg-primary/20 transition-all duration-300"
                 >
                   <CalendarCheck className="w-4 h-4" />
-                  Audit gratuit — 30 min
+                  Audit gratuit — 1H
                 </a>
               </div>
 
