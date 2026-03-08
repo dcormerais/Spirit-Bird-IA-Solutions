@@ -105,7 +105,7 @@ const Contact = () => {
             </a>
           </motion.div>
           <p className="text-gray-500 text-sm mb-16">
-            ✓ 100% gratuit · ✓ Sans engagement · ✓ Réponse sous 24h
+            ✓ 100% gratuit · ✓ Sans engagement · ✓ Durée : 1H
           </p>
 
           {/* Services */}
