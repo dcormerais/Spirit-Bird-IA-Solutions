@@ -94,7 +94,7 @@ const Contact = () => {
             className="mb-4"
           >
             <a
-              href="https://calendly.com/dorian-cormerais/30min"
+              href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
               target="_blank"
               rel="noopener noreferrer"
               className="button-primary px-10 py-4 rounded-full inline-flex items-center gap-3 text-lg font-semibold hover:scale-105 transform transition-all duration-300"

@@ -96,7 +96,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-6"
             >
               <a
-                href="https://calendly.com/dorian-cormerais/30min"
+                href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="button-primary px-8 py-4 rounded-full inline-flex items-center text-lg font-semibold group"

@@ -107,7 +107,7 @@ const Services = () => {
               En quelques semaines, selon la complexité et le nombre de workflows à automatiser.
             </p>
             <a
-              href="https://calendly.com/dorian-cormerais/30min"
+              href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
               target="_blank"
               rel="noopener noreferrer"
               className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2"
@@ -186,7 +186,7 @@ const Services = () => {
               ))}
             </div>
             <a
-              href="https://calendly.com/dorian-cormerais/30min"
+              href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 justify-center"
@@ -221,7 +221,7 @@ const Services = () => {
               </p>
             </div>
             <a
-              href="https://calendly.com/dorian-cormerais/30min"
+              href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm group"

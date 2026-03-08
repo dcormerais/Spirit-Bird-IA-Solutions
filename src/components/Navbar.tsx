@@ -105,7 +105,7 @@ const Navbar = () => {
 
             {/* CTA */}
             <a
-              href="https://calendly.com/dorian-cormerais/30min"
+              href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-8 px-6 py-2.5 rounded-full bg-primary text-dark font-semibold hover:bg-primary/90 transition-all duration-300 text-sm hover:scale-105 transform inline-flex items-center gap-2"
@@ -167,7 +167,7 @@ const Navbar = () => {
               </div>
 
               <a
-                href="https://calendly.com/dorian-cormerais/30min"
+                href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center px-6 py-3 bg-primary text-dark font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 text-base inline-flex items-center justify-center gap-2"
