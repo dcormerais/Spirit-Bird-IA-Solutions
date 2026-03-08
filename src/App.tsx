@@ -79,7 +79,7 @@ const App: React.FC = () => {
                   </a>
                 </div>
                 <a
-                  href="https://calendly.com/dorian-cormerais/30min"
+                  href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold hover:bg-primary/20 transition-all duration-300"

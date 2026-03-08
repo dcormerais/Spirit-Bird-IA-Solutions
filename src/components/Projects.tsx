@@ -227,7 +227,7 @@ const Projects = () => {
             Chaque projet commence par une conversation. Dites-moi ce qui vous prend du temps et on voit ce qu'on peut automatiser.
           </p>
           <a
-            href="https://calendly.com/dorian-cormerais/30min"
+            href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
             target="_blank"
             rel="noopener noreferrer"
             className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 hover:scale-105 transform transition-all duration-300"
