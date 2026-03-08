@@ -65,7 +65,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            30 minutes pour identifier ce qui peut être automatisé dans votre organisation.
+            1h pour identifier ce qui peut être automatisé dans votre organisation.
             Pas de pitch, juste un diagnostic concret.
           </motion.p>
 
