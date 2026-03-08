@@ -33,7 +33,7 @@ const steps = [
     number: '1',
     icon: Search,
     title: 'Audit gratuit',
-    description: "On analyse ensemble où vous perdez du temps. Tâches chronophages, outils mal connectés, process inefficaces — on identifie les vrais leviers d'action en 30 minutes."
+    description: "On analyse ensemble où vous perdez du temps. Tâches chronophages, outils mal connectés, process inefficaces — on identifie les vrais leviers d'action en 1 heure."
   },
   {
     number: '2',
