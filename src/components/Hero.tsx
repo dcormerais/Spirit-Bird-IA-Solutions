@@ -122,7 +122,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              ✓ Audit 100% gratuit · ✓ Sans engagement · ✓ Diagnostic concret en 30 min
+              ✓ Audit 100% gratuit · ✓ Sans engagement · ✓ Diagnostic concret en 1H
             </motion.p>
           </motion.div>
         </ParallaxSection>
