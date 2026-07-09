@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Bot, Zap, BarChart2, Workflow } from 'lucide-react';
+import { ArrowRight, Bot, Zap, BarChart2, Workflow, ShieldCheck } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
 import ParallaxSection from './ParallaxSection';
 import Logo from './Logo';
@@ -67,8 +67,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span>Gagnez du temps grâce à </span>
-              <span className="gradient-text">l'automatisation IA</span>
+              <span>Transformez l'IA en </span>
+              <span className="gradient-text">résultats opérationnels</span>
             </motion.h2>
 
             <motion.p
@@ -77,17 +77,27 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Votre équipe est trop talentueuse pour passer ses journées sur des tâches répétitives. Je conçois les systèmes qui s'en chargent automatiquement.
+              J'accompagne les entreprises dans leur transition vers l'intelligence artificielle : audit des processus, automatisation, agents IA et accompagnement des équipes.
             </motion.p>
 
             <motion.p
-              className="text-gray-400 text-lg max-w-2xl mx-auto mb-12"
+              className="text-gray-400 text-lg max-w-2xl mx-auto mb-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              On commence par comprendre vos vrais problèmes, pas par vous vendre de la technologie.
+              Pas de technologie gadget. Des solutions IA conçues autour de vos vrais besoins métier.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.7 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 mb-12 rounded-full bg-primary/10 border border-primary/20"
+            >
+              <ShieldCheck className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary tracking-wide">L'IA exécute. L'humain contrôle.</span>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -101,17 +111,17 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="button-primary px-8 py-4 rounded-full inline-flex items-center text-lg font-semibold group"
               >
-                <span>Réserver mon audit gratuit</span>
+                <span>Réserver un audit IA</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <HashLink
                 smooth
-                to="/#services"
+                to="/#expertise"
                 scroll={scrollWithOffset}
                 className="text-gray-300 hover:text-primary transition-colors px-8 py-3 text-lg font-medium flex items-center group"
               >
-                <span>Découvrir mes services</span>
+                <span>Découvrir mon approche</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </HashLink>
             </motion.div>

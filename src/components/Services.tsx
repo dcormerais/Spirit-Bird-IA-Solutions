@@ -19,12 +19,10 @@ const problems = [
 
 const featuresIA = [
   "Automatisation de workflows métiers",
-  "Intégration agents IA (CRM, ERP, email...)",
-  "Connexion d'outils via Make, n8n, Zapier",
+  "Intégration d'agents IA (CRM, email)",
+  "Connexion d'outils via n8n, Make, Zapier",
   "Dashboards et reporting automatisés",
-  "Relances et onboarding automatiques",
   "Formation et accompagnement équipes",
-  "Déploiement en quelques semaines",
   "Suivi et optimisation continue"
 ];
 
@@ -32,20 +30,20 @@ const steps = [
   {
     number: '1',
     icon: Search,
-    title: 'Audit gratuit',
-    description: "On analyse ensemble où vous perdez du temps. Tâches chronophages, outils mal connectés, process inefficaces — on identifie les vrais leviers d'action en 1 heure."
+    title: "Comprendre avant d'automatiser",
+    description: "Analyse des processus, identification des irritants et sélection des cas d'usage IA prioritaires."
   },
   {
     number: '2',
     icon: Code,
-    title: 'Développement',
-    description: "On connecte vos outils et on construit les automatisations qui ont le plus d'impact. Sans perturber vos équipes, sans tout réinventer."
+    title: "Construire la solution adaptée",
+    description: "Développement des workflows, intégration des outils et création des systèmes IA."
   },
   {
     number: '3',
     icon: GraduationCap,
-    title: 'Formation',
-    description: "Vous et vos équipes prenez en main les nouveaux process. Documentation claire, accompagnement inclus. Vous pilotez, vous restez autonomes."
+    title: "Déployer avec les équipes",
+    description: "Formation, documentation et accompagnement pour garantir une adoption durable."
   }
 ];
 
@@ -112,7 +110,7 @@ const Services = () => {
               rel="noopener noreferrer"
               className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2"
             >
-              <span>Réserver mon audit gratuit</span>
+              <span>Réserver un audit IA</span>
               <ArrowRight className="w-4 h-4" />
             </a>
             <p className="text-gray-500 text-sm mt-3">✓ Gratuit · ✓ Sans engagement · ✓ Diagnostic concret</p>
@@ -191,7 +189,7 @@ const Services = () => {
               rel="noopener noreferrer"
               className="mt-8 button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 justify-center"
             >
-              <span>Réserver un audit gratuit</span>
+              <span>Réserver un audit IA</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
@@ -241,7 +239,7 @@ const Services = () => {
           className="mb-20"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Comment ça marche ?
+            Comment je travaille
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
