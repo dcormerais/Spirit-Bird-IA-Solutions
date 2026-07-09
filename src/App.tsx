@@ -9,6 +9,8 @@ import Services from './components/Services';
 import Projects from './components/Projects';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
+import Expertise from './components/Expertise';
+import Startups from './components/Startups';
 import ScrollProgress from './components/ScrollProgress';
 import LoadingSpinner from './components/LoadingSpinner';
 import AnimatedBackground from './components/AnimatedBackground';
@@ -46,8 +48,10 @@ const App: React.FC = () => {
                 <>
                   <Hero />
                   <About />
+                  <Expertise />
                   <Services />
                   <Projects />
+                  <Startups />
                   <Pricing />
                   <Contact />
                 </>
@@ -68,7 +72,7 @@ const App: React.FC = () => {
                 </span>
                 <div className="space-y-4">
                   <p className="text-sm text-gray-400">
-                    Agence d'automatisation IA pour PME — workflows sur-mesure, agents IA, outils web.
+                    Consultant intégrateur IA — automatisation, agents IA et transformation des processus métiers.
                   </p>
                   <p className="text-sm text-gray-400">100% remote · France & international 🌍</p>
                   <a
@@ -93,6 +97,7 @@ const App: React.FC = () => {
               <div>
                 <h3 className="text-sm font-semibold text-white mb-6">Navigation</h3>
                 <ul className="space-y-2">
+                  <li><a href="#expertise" className="text-sm text-gray-400 hover:text-primary transition-colors">Expertise</a></li>
                   <li><a href="#services" className="text-sm text-gray-400 hover:text-primary transition-colors">Services</a></li>
                   <li><a href="#about" className="text-sm text-gray-400 hover:text-primary transition-colors">À Propos</a></li>
                   <li><a href="#projets" className="text-sm text-gray-400 hover:text-primary transition-colors">Réalisations</a></li>

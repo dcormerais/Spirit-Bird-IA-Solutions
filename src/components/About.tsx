@@ -1,17 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
+import { Zap, Layers, BrainCircuit, Plug, Database } from 'lucide-react';
 import ParallaxSection from './ParallaxSection';
 
-const tools = [
-  { name: "Make", desc: "automatisation visuelle" },
-  { name: "n8n", desc: "workflows open-source" },
-  { name: "Zapier", desc: "connexion d'apps" },
-  { name: "LangChain", desc: "gestion des flux IA" },
-  { name: "OpenAI API", desc: "intelligence artificielle" },
-  { name: "Agents IA", desc: "systèmes autonomes" },
-  { name: "Webhooks", desc: "connexion entre outils" },
-  { name: "API REST", desc: "intégration sur mesure" },
+const techCategories = [
+  {
+    icon: Zap,
+    name: "Automatisation",
+    tools: ["n8n", "Make", "Zapier"]
+  },
+  {
+    icon: BrainCircuit,
+    name: "IA générative",
+    tools: ["OpenAI API", "Claude / Anthropic", "Agents IA", "LangChain"]
+  },
+  {
+    icon: Plug,
+    name: "Intégration",
+    tools: ["API REST", "Webhooks", "OAuth", "Gmail API", "Twilio"]
+  },
+  {
+    icon: Database,
+    name: "Données",
+    tools: ["Supabase", "PostgreSQL", "MongoDB", "Airtable"]
+  }
 ];
 
 const approche = [
@@ -59,53 +71,68 @@ const About = () => {
                     Dorian <span className="gradient-text">Cormerais</span>
                   </h2>
                   <p className="text-gray-400">
-                    Ingénieur IA et Développeur Full Stack
+                    Consultant intégrateur IA
                   </p>
                 </div>
               </div>
+
+              {/* Titre de l'approche hybride */}
+              <h3 className="text-2xl font-bold leading-tight">
+                Une approche hybride entre{' '}
+                <span className="gradient-text">métier, data et technologie</span>
+              </h3>
 
               {/* Texte de présentation */}
               <div className="space-y-4 text-gray-300">
                 <p>
-                  Mon parcours ne ressemble pas à celui d'un ingénieur classique.
-                  Avant de coder des systèmes d'automatisation, j'ai vendu, négocié,
-                  piloté des campagnes marketing et analysé des données pour des entreprises très différentes.
+                  Mon parcours combine trois dimensions rarement réunies : compréhension business,
+                  expertise data et capacité technique.
                 </p>
                 <p>
-                  Ce que ça m'a appris : la plupart des problèmes qu'on croit techniques
-                  sont en réalité des problèmes d'organisation. Et la technologie,
-                  quand elle est bien utilisée, les résout silencieusement.
+                  Avant de concevoir des systèmes d'automatisation IA, j'ai travaillé sur des problématiques
+                  commerciales, marketing, analytiques et de développement.
                 </p>
                 <p>
-                  C'est avec cette conviction que j'ai fondé{' '}
-                  <span className="font-semibold text-white">Spirit Bird IA Solutions</span>.
-                  Une structure légère, orientée résultats, qui part toujours
-                  du terrain avant de parler d'outils.
+                  Cette vision me permet d'aborder l'IA différemment : commencer par comprendre le problème
+                  terrain avant de choisir la technologie.
                 </p>
                 <div className="border-l-2 border-primary pl-4 mt-2 space-y-2">
-                  <p className="text-gray-300">
-                    Celui qui comprend votre métier n'est généralement pas celui qui construit la solution technique. Et c'est justement ce qui change tout.
+                  <p className="text-white font-semibold">
+                    Votre métier, je le comprends.
                   </p>
-                  <p className="text-white font-semibold">Ici, c'est le cas.</p>
                   <p className="text-primary font-medium">
-                    Votre métier, je le comprends. Votre solution, je la construis.
+                    Votre solution, je la construis.
                   </p>
                 </div>
               </div>
 
-              {/* Outils IA */}
+              {/* Technologies au service des usages métier */}
               <div className="service-card p-6 rounded-xl border-primary/30 bg-primary/5">
-                <h3 className="font-semibold mb-4 flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-primary" />
-                  Outils et technologies IA
+                <h3 className="font-semibold mb-1 flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-primary" />
+                  Les technologies au service des usages métier
                 </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {tools.map((tool, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
-                      <div>
-                        <span className="text-sm text-gray-300 font-medium">{tool.name}</span>
-                        <span className="text-xs text-gray-500 ml-1.5">{tool.desc}</span>
+                <p className="text-xs text-gray-500 mb-5">
+                  Une stack choisie pour résoudre des problèmes, pas pour faire illusion.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {techCategories.map((category, index) => (
+                    <div key={index}>
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                          <category.icon className="w-3.5 h-3.5 text-primary" />
+                        </div>
+                        <span className="text-sm font-semibold text-white">{category.name}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2 pl-9">
+                        {category.tools.map((tool, i) => (
+                          <span
+                            key={i}
+                            className="px-2.5 py-1 text-xs rounded-full bg-white/5 text-gray-300 border border-white/10"
+                          >
+                            {tool}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   ))}
@@ -160,7 +187,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 w-full justify-center"
               >
-                <span>Réserver mon audit gratuit</span>
+                <span>Réserver un audit IA</span>
                 <Zap className="w-4 h-4" />
               </a>
               <p className="text-gray-500 text-sm text-center -mt-4">

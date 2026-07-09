@@ -1,74 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Star, Zap } from 'lucide-react';
+import { ExternalLink, Star, Zap, AlertCircle, Cpu, TrendingUp } from 'lucide-react';
 
 const projects = [
   {
     title: 'Gestion de stock automatisée',
     type: 'automation',
     badge: '⭐ Workflow Complet',
-    description:
-      "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs encore et encore... c'est du temps perdu et une source d'erreurs coûteuses. Ce workflow n8n surveille votre inventaire en continu, vous envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs. Vous gardez le contrôle, sans le travail répétitif.",
     image: '/Images/Workflow_N8N.png',
-    technicalHighlights: [
-      'Déclencheur planifié toutes les X heures',
-      'Lecture Google Sheets en temps réel',
-      'Filtrage automatique des stocks bas',
-      'Agent IA pour rédaction des emails'
-    ],
-    userExperience: [
-      "Étape d'approbation par email en 1 clic",
-      'Emails fournisseurs personnalisés par IA',
-      'Zéro saisie manuelle',
-      'Historique des actions automatisé'
-    ],
+    problem: "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs encore et encore — un processus chronophage et source d'erreurs coûteuses.",
+    solution: "Un workflow intelligent surveille l'inventaire en continu, envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs via un agent IA.",
+    result: "Zéro saisie manuelle, contrôle total conservé via l'approbation en 1 clic, et des heures récupérées chaque semaine sur un process autrefois entièrement manuel.",
     technologies: ['n8n', 'OpenAI', 'Google Sheets', 'Gmail API']
   },
   {
     title: 'Rendez-vous Sans Frontières',
     type: 'web',
     badge: null,
-    description:
-      "Site web conçu pour une agence spécialisée dans les voyages immersifs au Maroc. L'enjeu : traduire l'authenticité des expériences proposées dans un design épuré et performant, qui donne envie de partir dès la première seconde.",
     image: '/Images/rdvsf3.jpg',
     link: 'https://rendez-vous-sans-frontieres.fr/',
-    technicalHighlights: [
-      'Temps de chargement inférieur à 1s',
-      'Score mobile 98/100 Lighthouse',
-      'Protection DDoS intégrée',
-      'Déploiements Git automatisés'
-    ],
-    userExperience: [
-      'Micro-animations fluides',
-      'Navigation intuitive en 3 clics maximum',
-      'Formulaire intelligent en temps réel',
-      'Adaptation parfaite tous écrans'
-    ],
+    problem: "Une agence de voyages immersifs au Maroc avait besoin d'un site capable de traduire l'authenticité de ses expériences dès la première seconde, sans compromis sur la performance.",
+    solution: "Un site web sur mesure, au design épuré et performant, avec micro-animations fluides, navigation intuitive en 3 clics et adaptation parfaite sur tous écrans.",
+    result: "Temps de chargement inférieur à 1s, score mobile 98/100 Lighthouse, et une expérience qui donne envie de partir dès la première visite.",
     technologies: ['React', 'Tailwind CSS', 'Node.js', 'Netlify']
   },
   {
     title: 'MyMental',
     type: 'mobile',
     badge: null,
-    description:
-      "Application mobile pensée pour accompagner les utilisateurs dans un parcours de santé globale : méditation guidée, entraînements adaptés et interactions sociales. Un projet technique exigeant, mêlant synchronisation temps réel et expérience utilisateur soignée.",
     images: [
       '/Images/mymental.jpg',
       '/Images/mymental2.jpg'
     ],
-    technicalHighlights: [
-      'Architecture React Native optimisée',
-      'Synchronisation temps réel',
-      'Cache intelligent hors-ligne',
-      'Performances natives iOS et Android'
-    ],
-    userExperience: [
-      'Interface fluide et intuitive',
-      'Transitions personnalisées',
-      'Notifications contextuelles',
-      "Gestion d'état avancée"
-    ],
+    problem: "Accompagner les utilisateurs dans un parcours de santé globale — méditation, entraînements adaptés et interactions sociales — avec une expérience fluide et fiable en toutes circonstances.",
+    solution: "Une application mobile au design soigné, avec synchronisation temps réel, cache intelligent hors-ligne et notifications contextuelles pour un accompagnement continu.",
+    result: "Une interface fluide et intuitive, des transitions personnalisées, et des performances natives sur iOS et Android pour une adoption naturelle par les utilisateurs.",
     technologies: ['React Native', 'Node.js', 'WebSocket']
   }
 ];
@@ -157,53 +124,51 @@ const Projects = () => {
 
               {/* Contenu */}
               <div className="flex-grow flex flex-col p-8">
-                <div className="mb-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <h3 className="text-xl font-semibold">{project.title}</h3>
-                      {project.badge && (
-                        <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
-                          {project.badge}
-                        </span>
-                      )}
-                    </div>
-                    {'link' in project && project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors hover:scale-110 transform duration-200"
-                      >
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                    {project.badge && (
+                      <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+                        {project.badge}
+                      </span>
                     )}
                   </div>
-                  <p className="text-gray-400 leading-relaxed">{project.description}</p>
+                  {'link' in project && project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 transition-colors hover:scale-110 transform duration-200"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
 
-                <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Problème métier → Solution IA → Résultat obtenu */}
+                <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
-                    <h4 className="text-sm font-semibold text-primary mb-4">Points techniques</h4>
-                    <div className="space-y-2">
-                      {project.technicalHighlights.map((highlight, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
-                          <span>{highlight}</span>
-                        </div>
-                      ))}
+                    <div className="flex items-center gap-2 mb-3">
+                      <AlertCircle className="w-4 h-4 text-red-400" />
+                      <h4 className="text-sm font-semibold text-red-400">Problème métier</h4>
                     </div>
+                    <p className="text-sm text-gray-300 leading-relaxed">{project.problem}</p>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-primary mb-4">Expérience utilisateur</h4>
-                    <div className="space-y-2">
-                      {project.userExperience.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
-                          <span>{feature}</span>
-                        </div>
-                      ))}
+                    <div className="flex items-center gap-2 mb-3">
+                      <Cpu className="w-4 h-4 text-primary" />
+                      <h4 className="text-sm font-semibold text-primary">Solution IA</h4>
                     </div>
+                    <p className="text-sm text-gray-300 leading-relaxed">{project.solution}</p>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <TrendingUp className="w-4 h-4 text-secondary" />
+                      <h4 className="text-sm font-semibold text-secondary">Résultat obtenu</h4>
+                    </div>
+                    <p className="text-sm text-gray-300 leading-relaxed">{project.result}</p>
                   </div>
                 </div>
 
@@ -233,7 +198,7 @@ const Projects = () => {
             className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 hover:scale-105 transform transition-all duration-300"
           >
             <Zap className="w-4 h-4" />
-            <span>Réserver mon audit gratuit</span>
+            <span>Réserver un audit IA</span>
           </a>
         </div>
 
