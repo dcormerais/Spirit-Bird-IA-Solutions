@@ -55,7 +55,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Commençons par un <span className="gradient-text">audit IA</span>
+            Commençons par un <span className="gradient-text">audit gratuit</span>
           </motion.h2>
 
           <motion.p
@@ -100,7 +100,7 @@ const Contact = () => {
               className="button-primary px-10 py-4 rounded-full inline-flex items-center gap-3 text-lg font-semibold hover:scale-105 transform transition-all duration-300"
             >
               <CalendarCheck className="w-5 h-5" />
-              <span>Réserver un audit IA</span>
+              <span>Réserver mon audit gratuit</span>
               <ArrowRight className="w-5 h-5" />
             </a>
           </motion.div>
