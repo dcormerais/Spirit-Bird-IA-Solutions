@@ -29,11 +29,11 @@ const techCategories = [
 const approche = [
   {
     title: "Le problème d'abord",
-    description: "Chaque mission commence par une analyse de vos process réels. Pas de solution cherchant un problème."
+    description: "Chaque mission commence par une analyse de vos process réels."
   },
   {
     title: "Vos outils existants",
-    description: "On connecte ce que vous avez déjà — CRM, email, Notion, Airtable, Google Sheets, Slack, HubSpot, Calendly, et bien d'autres. Pas besoin de tout réinventer."
+    description: "On connecte vos outils existants (CRM, email, Notion, Airtable, Slack)."
   },
   {
     title: "Vous restez autonomes",
@@ -85,16 +85,13 @@ const About = () => {
               {/* Texte de présentation */}
               <div className="space-y-4 text-gray-300">
                 <p>
-                  Mon parcours combine trois dimensions rarement réunies : compréhension business,
-                  expertise data et capacité technique.
+                  Mon parcours combine trois dimensions rarement réunies : compréhension business, expertise data et capacité technique.
                 </p>
                 <p>
-                  Avant de concevoir des systèmes d'automatisation IA, j'ai travaillé sur des problématiques
-                  commerciales, marketing, analytiques et de développement.
+                  Avant de concevoir des systèmes d'automatisation IA, j'ai travaillé sur des problématiques commerciales, marketing et de développement.
                 </p>
                 <p>
-                  Cette vision me permet d'aborder l'IA différemment : commencer par comprendre le problème
-                  terrain avant de choisir la technologie.
+                  Cette vision me permet d'aborder l'IA différemment : comprendre le problème terrain avant de choisir la technologie.
                 </p>
                 <div className="border-l-2 border-primary pl-4 mt-2 space-y-2">
                   <p className="text-white font-semibold">

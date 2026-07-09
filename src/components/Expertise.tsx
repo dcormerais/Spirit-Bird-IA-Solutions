@@ -12,12 +12,12 @@ const expertiseBlocks = [
   {
     icon: Workflow,
     title: 'Automatisation intelligente',
-    description: "Créer des workflows capables d'exécuter automatiquement des tâches répétitives."
+    description: "Créer des workflows capables d'exécuter automatiquement les tâches répétitives et de libérer du temps aux équipes."
   },
   {
     icon: Bot,
     title: 'Agents IA',
-    description: "Concevoir des assistants et agents capables d'interagir avec vos outils métiers."
+    description: "Concevoir des assistants capables d'interagir avec vos outils et de soutenir vos processus métier."
   },
   {
     icon: Plug,
@@ -26,8 +26,8 @@ const expertiseBlocks = [
   },
   {
     icon: GraduationCap,
-    title: 'Formation & adoption',
-    description: "Permettre aux équipes d'utiliser efficacement les nouveaux outils.",
+    title: 'Formation et adoption',
+    description: "Accompagner les équipes pour intégrer durablement l'intelligence artificielle dans leur quotidien.",
     span: 'lg:col-span-2'
   }
 ];
@@ -70,7 +70,7 @@ const Expertise = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`service-card p-8 rounded-xl hover:border-primary/30 transition-all duration-300 flex flex-col ${block.span || ''}`}
             >
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-4 mb-5">
                 <div className="p-3 rounded-full bg-primary/10 border border-primary/20 text-primary">
                   <block.icon className="w-6 h-6" />
                 </div>

@@ -30,7 +30,7 @@ const plans = [
     price: '2 500€ HT',
     maintenance: 'à partir de 500€ / mois',
     maintenanceDetail: 'Infrastructure API, surveillance technique, ajustements mineurs et support prioritaire sous 24h',
-    description: 'Pour les entreprises qui veulent automatiser plusieurs process et gagner en efficacité opérationnelle.',
+    description: 'Pour automatiser plusieurs process et gagner en efficacité opérationnelle.',
     metrics: [
       'Gain de temps estimé : 15 à 35h / mois',
       'Réduction des tâches répétitives et optimisables : 60 à 80%',
@@ -53,7 +53,7 @@ const plans = [
     price: 'Sur devis',
     maintenance: 'Sur devis',
     maintenanceDetail: 'Infrastructure API, optimisations continues, suivi de performance et support dédié',
-    description: 'Pour les projets ambitieux nécessitant une architecture sur mesure, des systèmes autonomes et un accompagnement intégral.',
+    description: 'Pour les projets ambitieux nécessitant une architecture sur mesure et un accompagnement intégral.',
     metrics: [
       'Gain de temps estimé : 40h+ / mois',
       'Processus critiques audités avant mise en production',
@@ -127,7 +127,7 @@ const Pricing = () => {
                   : ''
               }`}
             >
-              {/* Badge — hauteur fixe pour aligner le reste */}
+              {/* Badge, hauteur fixe pour aligner le reste */}
               <div className="h-8 mb-2 flex items-center">
                 {plan.highlight && (
                   <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
@@ -136,11 +136,11 @@ const Pricing = () => {
                 )}
               </div>
 
-              {/* Nom + description — hauteur fixe */}
+              {/* Nom + description, hauteur fixe */}
               <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
               <p className="text-gray-400 text-sm mb-6 h-16 line-clamp-3">{plan.description}</p>
 
-              {/* Prix — toujours 2 lignes, même pour "Sur devis" */}
+              {/* Prix, toujours 2 lignes, même pour Sur devis */}
               <div className="h-16 flex flex-col justify-end mb-1">
                 <p className="text-xs text-gray-500 mb-1">
                   {plan.priceLabel ?? '\u00a0'}

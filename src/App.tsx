@@ -72,7 +72,7 @@ const App: React.FC = () => {
                 </span>
                 <div className="space-y-4">
                   <p className="text-sm text-gray-400">
-                    Consultant intégrateur IA — automatisation, agents IA et transformation des processus métiers.
+                    Consultant intégrateur IA spécialisé en automatisation, agents IA et transformation des processus métiers.
                   </p>
                   <p className="text-sm text-gray-400">100% remote · France & international 🌍</p>
                   <a
@@ -89,7 +89,7 @@ const App: React.FC = () => {
                   className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold hover:bg-primary/20 transition-all duration-300"
                 >
                   <CalendarCheck className="w-4 h-4" />
-                  Audit gratuit — 1H
+                  Audit gratuit, 1H
                 </a>
               </div>
 

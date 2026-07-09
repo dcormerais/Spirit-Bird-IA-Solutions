@@ -9,9 +9,9 @@ const projects = [
     type: 'automation',
     badge: '⭐ Workflow Complet',
     image: '/Images/Workflow_N8N.png',
-    problem: "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs encore et encore — un processus chronophage et source d'erreurs coûteuses.",
-    solution: "Un workflow intelligent surveille l'inventaire en continu, envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs via un agent IA.",
-    result: "Zéro saisie manuelle, contrôle total conservé via l'approbation en 1 clic, et des heures récupérées chaque semaine sur un process autrefois entièrement manuel.",
+    problem: "Vérification manuelle des stocks, identification des manques, rédaction des emails fournisseurs. Un processus chronophage et source d'erreurs.",
+    solution: "Un workflow intelligent surveille l'inventaire, envoie un résumé avec approbation en 1 clic, puis rédige et envoie les emails aux bons fournisseurs.",
+    result: "Zéro saisie manuelle, contrôle total conservé, et des heures récupérées chaque semaine sur un process autrefois entièrement manuel.",
     technologies: ['n8n', 'OpenAI', 'Google Sheets', 'Gmail API']
   },
   {
@@ -20,8 +20,8 @@ const projects = [
     badge: null,
     image: '/Images/rdvsf3.jpg',
     link: 'https://rendez-vous-sans-frontieres.fr/',
-    problem: "Une agence de voyages immersifs au Maroc avait besoin d'un site capable de traduire l'authenticité de ses expériences dès la première seconde, sans compromis sur la performance.",
-    solution: "Un site web sur mesure, au design épuré et performant, avec micro-animations fluides, navigation intuitive en 3 clics et adaptation parfaite sur tous écrans.",
+    problem: "Une agence de voyages immersifs au Maroc avait besoin d'un site traduisant l'authenticité de ses expériences dès la première seconde.",
+    solution: "Un site web sur mesure, au design épuré et performant, avec navigation intuitive et adaptation parfaite sur tous écrans.",
     result: "Temps de chargement inférieur à 1s, score mobile 98/100 Lighthouse, et une expérience qui donne envie de partir dès la première visite.",
     technologies: ['React', 'Tailwind CSS', 'Node.js', 'Netlify']
   },
@@ -33,9 +33,9 @@ const projects = [
       '/Images/mymental.jpg',
       '/Images/mymental2.jpg'
     ],
-    problem: "Accompagner les utilisateurs dans un parcours de santé globale — méditation, entraînements adaptés et interactions sociales — avec une expérience fluide et fiable en toutes circonstances.",
-    solution: "Une application mobile au design soigné, avec synchronisation temps réel, cache intelligent hors-ligne et notifications contextuelles pour un accompagnement continu.",
-    result: "Une interface fluide et intuitive, des transitions personnalisées, et des performances natives sur iOS et Android pour une adoption naturelle par les utilisateurs.",
+    problem: "Accompagner les utilisateurs dans un parcours de santé globale, entre méditation, entraînements adaptés et interactions sociales.",
+    solution: "Une application mobile au design soigné, avec synchronisation temps réel, cache hors-ligne et notifications contextuelles.",
+    result: "Une interface fluide, des transitions personnalisées, et des performances natives sur iOS et Android pour une adoption naturelle.",
     technologies: ['React Native', 'Node.js', 'WebSocket']
   }
 ];

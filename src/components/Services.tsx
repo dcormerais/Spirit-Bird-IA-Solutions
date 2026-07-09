@@ -19,12 +19,10 @@ const problems = [
 
 const featuresIA = [
   "Automatisation de workflows métiers",
-  "Intégration agents IA (CRM, ERP, email...)",
-  "Connexion d'outils via Make, n8n, Zapier",
+  "Intégration d'agents IA (CRM, email)",
+  "Connexion d'outils via n8n, Make, Zapier",
   "Dashboards et reporting automatisés",
-  "Relances et onboarding automatiques",
   "Formation et accompagnement équipes",
-  "Déploiement en quelques semaines",
   "Suivi et optimisation continue"
 ];
 
@@ -148,7 +146,7 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Des solutions sur-mesure pour optimiser votre activité et libérer le potentiel de vos équipes
+            Des solutions sur mesure pour optimiser votre activité et libérer vos équipes.
           </motion.p>
         </div>
 
@@ -175,7 +173,7 @@ const Services = () => {
               <h3 className="text-2xl font-semibold">Automatisation et IA</h3>
             </div>
             <p className="text-gray-400 mb-8">
-              Éliminez les tâches répétitives et libérez vos équipes pour ce qui crée vraiment de la valeur.
+              Éliminez les tâches répétitives et libérez vos équipes pour ce qui crée de la valeur.
             </p>
             <div className="grid grid-cols-2 gap-3 flex-grow">
               {featuresIA.map((feature, i) => (
