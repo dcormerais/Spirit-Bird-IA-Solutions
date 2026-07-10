@@ -13,7 +13,6 @@ import {
   X,
   Check,
   Workflow
-  Sparkles
 } from 'lucide-react';
 
 const problems = [
