@@ -1,76 +1,68 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, ArrowRight, Check, TrendingUp } from 'lucide-react';
+import { Zap, ArrowRight, Check } from 'lucide-react';
 
 const plans = [
   {
     name: 'Starter',
     priceLabel: 'à partir de',
     price: '1 200€ HT',
-    maintenance: 'à partir de 250€ / mois',
-    maintenanceDetail: 'Suivi, hébergement, supervision, maintenance corrective et gestion des services IA utilisés',
-    description: 'Pour tester l\'automatisation sur un process précis et mesurer concrètement ce que ça change.',
-    metrics: [
-      'Gain de temps estimé : 3 à 12h / mois',
-      'ROI typique : 3 à 5 mois',
-    ],
+    followUp: 'à partir de 250€ / mois',
+    followUpDetail:
+      'Hébergement, supervision, maintenance corrective, suivi et gestion des services IA utilisés',
+    description:
+      'Pour automatiser un premier processus métier et éliminer une friction opérationnelle identifiée.',
     features: [
-      '1 workflow automatisé sur mesure',
+      '1 processus métier automatisé sur mesure',
       '2 à 3 outils connectés',
+      'Configuration et mise en production',
       'Documentation de prise en main incluse',
-      'Mise en production en 2 à 4 semaines',
-      'Suivi du fonctionnement et des consommations IA',
+      'Suivi du fonctionnement de la solution',
       'Support par email sous 48h',
     ],
     highlight: false,
     cta: 'Démarrer mon projet'
   },
+
   {
     name: 'Growth',
     priceLabel: 'à partir de',
     price: '2 500€ HT',
-    maintenance: 'à partir de 500€ / mois',
-    maintenanceDetail: 'Suivi prioritaire, optimisations continues, supervision avancée et gestion des ressources IA',
-    description: 'Pour les entreprises qui veulent automatiser plusieurs process et gagner en efficacité opérationnelle.',
-    metrics: [
-      'Gain de temps estimé : 15 à 35h / mois',
-      'Réduction des tâches répétitives et optimisables : 60 à 80%',
-      'ROI typique : 2 à 4 mois',
-    ],
+    followUp: 'à partir de 500€ / mois',
+    followUpDetail:
+      'Suivi prioritaire, optimisations continues, supervision avancée et gestion des ressources IA',
+    description:
+      'Pour automatiser plusieurs processus et améliorer durablement l’efficacité opérationnelle.',
     features: [
-      'Workflows multi-étapes sur mesure',
-      'Intégrations multiples (CRM, email, Notion...)',
+      'Plusieurs workflows métier automatisés',
+      'Intégrations avancées avec vos outils existants',
       'Dashboard de suivi automatisé',
-      'Formation complète de votre équipe (jusqu\'à 5 personnes)',
-      'Mise en production en 4 à 8 semaines',
-      'Suivi prioritaire et optimisation continue',
-      'Gestion des ressources IA utilisées',
+      'Formation de vos équipes',
+      'Optimisation continue des automatisations',
+      'Gestion des services IA utilisés',
       'Support prioritaire sous 24h',
     ],
     highlight: true,
     cta: 'Démarrer mon projet'
   },
+
   {
     name: 'Scale',
     priceLabel: null,
     price: 'Sur devis',
-    maintenance: 'Sur devis',
-    maintenanceDetail: 'Accompagnement dédié, optimisation continue, évolution des automatisations et gestion complète de l\'infrastructure IA',
-    description: 'Pour les projets ambitieux nécessitant une architecture sur mesure, des systèmes autonomes et un accompagnement intégral.',
-    metrics: [
-      'Gain de temps estimé : 40h+ / mois',
-      'Processus critiques audités avant mise en production',
-      'ROI mesuré et suivi après déploiement',
-    ],
+    followUp: 'Sur devis',
+    followUpDetail:
+      'Accompagnement dédié, évolution continue et pilotage complet de votre environnement IA',
+    description:
+      'Pour les projets nécessitant une architecture sur mesure, des agents IA et un accompagnement stratégique.',
     features: [
       'Architecture complète sur mesure',
-      'Systèmes autonomes et décisionnels',
-      'Intégrations illimitées',
+      'Agents IA et systèmes autonomes',
+      'Intégrations multiples',
       'Dashboard et reporting avancés',
-      'Formation et montée en compétence de vos équipes',
-      'Pilotage complet de l\'écosystème IA',
-      'Optimisations et évolutions continues',
-      'Délai défini après audit',
+      'Formation et accompagnement des équipes',
+      'Optimisations continues',
+      'Pilotage global de la solution IA',
       'Accès direct et réactivité maximale',
     ],
     highlight: false,
@@ -84,6 +76,7 @@ const Pricing = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -114,29 +107,34 @@ const Pricing = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             Chaque projet commence par un audit gratuit.
-            Après le déploiement, je peux assurer le suivi, la maintenance et l'évolution
-            de votre automatisation pour garantir sa performance dans le temps.
+            J’analyse vos processus et vos outils pour identifier les automatisations
+            réellement pertinentes.
+
+            Après le déploiement, je peux assurer le suivi, la maintenance et
+            l’évolution de votre solution pour garantir son bon fonctionnement dans le temps.
           </motion.p>
+
         </div>
 
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {plans.map((plan, index) => (
+
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`service-card rounded-xl p-8 flex flex-col transition-all duration-300 ${
+              className={`service-card rounded-xl p-8 flex flex-col ${
                 plan.highlight
                   ? 'border-primary/50 bg-primary/5 ring-1 ring-primary/30'
                   : ''
               }`}
             >
 
-              <div className="h-8 mb-2 flex items-center">
+              <div className="h-8 mb-2">
                 {plan.highlight && (
                   <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
                     ⭐ Le plus demandé
@@ -145,72 +143,58 @@ const Pricing = () => {
               </div>
 
 
-              <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+              <h3 className="text-xl font-bold mb-2">
+                {plan.name}
+              </h3>
 
-              <p className="text-gray-400 text-sm mb-6 h-16 line-clamp-3">
+
+              <p className="text-gray-400 text-sm mb-6">
                 {plan.description}
               </p>
 
 
-              <div className="h-16 flex flex-col justify-end mb-1">
+              <div className="mb-6">
                 <p className="text-xs text-gray-500 mb-1">
-                  {plan.priceLabel ?? '\u00a0'}
+                  {plan.priceLabel}
                 </p>
-                <span className="text-3xl font-bold text-primary leading-none">
+
+                <span className="text-3xl font-bold text-primary">
                   {plan.price}
                 </span>
               </div>
 
 
-              <div className="mt-3 mb-6 pb-6 border-b border-white/5">
-                <p className="text-xs text-gray-500 mb-0.5">
+              <div className="pb-6 mb-6 border-b border-white/5">
+
+                <p className="text-xs text-gray-500 mb-2">
                   Suivi & optimisation continue
                 </p>
 
                 <p className="text-sm font-medium text-gray-300">
-                  {plan.maintenance}
+                  {plan.followUp}
                 </p>
 
-                <p className="text-xs text-gray-500 mt-0.5">
-                  {plan.maintenanceDetail}
-                </p>
-              </div>
-
-
-              <div className="mb-6 p-4 rounded-lg bg-primary/5 border border-primary/10">
-
-                <p className="text-xs font-semibold text-primary flex items-center gap-1.5 mb-3">
-                  <TrendingUp className="w-3.5 h-3.5" />
-                  Impact estimé
-                </p>
-
-                <div className="space-y-1.5">
-                  {plan.metrics.map((metric, i) => (
-                    <p key={i} className="text-xs text-gray-300">
-                      {metric}
-                    </p>
-                  ))}
-                </div>
-
-                <p className="text-xs text-gray-500 mt-3 italic">
-                  Estimations variables selon vos process, vos outils et vos usages.
+                <p className="text-xs text-gray-500 mt-2">
+                  {plan.followUpDetail}
                 </p>
 
               </div>
 
 
-              <div className="space-y-3 flex-grow mb-8">
+              <div className="flex-grow space-y-3 mb-8">
 
                 {plan.features.map((feature, i) => (
+
                   <div key={i} className="flex items-start gap-3">
 
-                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
 
                     <span className="text-sm text-gray-300">
                       {feature}
                     </span>
 
                   </div>
+
                 ))}
 
               </div>
@@ -220,22 +204,27 @@ const Pricing = () => {
                 href="https://calendly.com/dorian-cormerais/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+                className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm ${
                   plan.highlight
                     ? 'button-primary text-dark'
                     : 'border border-primary/30 text-primary hover:bg-primary/10'
                 }`}
               >
-                <span>{plan.cta}</span>
+
+                {plan.cta}
+
                 <ArrowRight className="w-4 h-4" />
+
               </a>
 
 
               <p className="text-xs text-gray-500 text-center mt-3">
-                Après audit gratuit, plan personnalisé fourni.
+                Après audit gratuit, proposition adaptée à votre contexte.
               </p>
 
+
             </motion.div>
+
           ))}
 
         </div>
@@ -246,37 +235,25 @@ const Pricing = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5 }}
         >
 
           <p className="text-white font-semibold text-lg mb-2">
-            Une automatisation qui reste performante dans le temps.
+            Une automatisation qui évolue avec votre activité.
           </p>
 
-          <p className="text-gray-400 text-sm mb-3">
-            Une automatisation n'est jamais figée.
-            Les outils évoluent, vos besoins changent et les usages IA progressent.
-            L'accompagnement permet de maintenir vos workflows opérationnels,
-            sécurisés et optimisés.
-          </p>
-
-          <p className="text-xs text-gray-500 italic">
-            Les chiffres indiqués sur cette page sont des estimations basées sur des projets similaires.
-            Ils peuvent varier selon vos process et votre organisation.
+          <p className="text-gray-400 text-sm">
+            Les outils évoluent, vos besoins changent et vos processus se transforment.
+            L’accompagnement permet de maintenir vos automatisations fiables,
+            optimisées et adaptées à votre organisation.
           </p>
 
         </motion.div>
 
 
-        <motion.p
-          className="text-center text-gray-500 text-sm mt-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
+        <p className="text-center text-gray-500 text-sm mt-8">
           Tous les tarifs sont indicatifs et hors taxes. Un devis personnalisé est établi après audit gratuit.
-        </motion.p>
+        </p>
 
       </div>
     </section>
