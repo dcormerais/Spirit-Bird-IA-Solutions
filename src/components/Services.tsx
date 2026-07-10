@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Bot, ArrowRight, Brain, Zap, Clock, BarChart2, Users, Search, Code, GraduationCap, X, Check } from 'lucide-react';
+import { Globe, Bot, ArrowRight, Brain, Clock, BarChart2, Users, Zap, X, Check } from 'lucide-react';
 
 const problems = [
   {
@@ -19,34 +19,13 @@ const problems = [
 
 const featuresIA = [
   "Automatisation de workflows métiers",
-  "Intégration agents IA (CRM, ERP, email...)",
+  "Intégration d'agents IA (CRM, ERP, email...)",
   "Connexion d'outils via Make, n8n, Zapier",
   "Dashboards et reporting automatisés",
   "Relances et onboarding automatiques",
-  "Formation et accompagnement équipes",
+  "Formation et accompagnement des équipes",
   "Déploiement en quelques semaines",
   "Suivi et optimisation continue"
-];
-
-const steps = [
-  {
-    number: '1',
-    icon: Search,
-    title: 'Audit gratuit',
-    description: "On analyse ensemble où vous perdez du temps. Tâches chronophages, outils mal connectés, process inefficaces — on identifie les vrais leviers d'action en 1 heure."
-  },
-  {
-    number: '2',
-    icon: Code,
-    title: 'Développement',
-    description: "On connecte vos outils et on construit les automatisations qui ont le plus d'impact. Sans perturber vos équipes, sans tout réinventer."
-  },
-  {
-    number: '3',
-    icon: GraduationCap,
-    title: 'Formation',
-    description: "Vous et vos équipes prenez en main les nouveaux process. Documentation claire, accompagnement inclus. Vous pilotez, vous restez autonomes."
-  }
 ];
 
 const beforeAfter = {
@@ -112,7 +91,7 @@ const Services = () => {
               rel="noopener noreferrer"
               className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2"
             >
-              <span>Réserver mon audit gratuit</span>
+              <span>Réserver un audit IA</span>
               <ArrowRight className="w-4 h-4" />
             </a>
             <p className="text-gray-500 text-sm mt-3">✓ Gratuit · ✓ Sans engagement · ✓ Diagnostic concret</p>
@@ -148,7 +127,7 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Des solutions sur-mesure pour optimiser votre activité et libérer le potentiel de vos équipes
+            Des solutions IA sur-mesure pour automatiser vos processus et libérer le potentiel de vos équipes
           </motion.p>
         </div>
 
@@ -191,7 +170,7 @@ const Services = () => {
               rel="noopener noreferrer"
               className="mt-8 button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 justify-center"
             >
-              <span>Réserver un audit gratuit</span>
+              <span>Réserver un audit IA</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
@@ -231,38 +210,6 @@ const Services = () => {
             </a>
           </motion.div>
         </div>
-
-        {/* Comment ça marche */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-20"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Comment ça marche ?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className="service-card p-8 rounded-xl hover:border-primary/30 transition-all duration-300 text-center"
-              >
-                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
-                  <step.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="text-xs font-semibold text-primary mb-2">Étape {step.number}</div>
-                <h3 className="text-lg font-semibold mb-4">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Avant / Après */}
         <motion.div

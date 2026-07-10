@@ -1,16 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Bot, Zap, BarChart2, Workflow } from 'lucide-react';
+import { ArrowRight, Bot, BarChart2, Workflow, BrainCircuit } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
 import ParallaxSection from './ParallaxSection';
 import Logo from './Logo';
 
 const Hero = () => {
   const badges = [
-    { icon: Bot, text: "Automatisation & IA", color: "from-pink-500 to-red-500" },
-    { icon: Workflow, text: "Workflows sur-mesure", color: "from-blue-500 to-purple-500" },
-    { icon: Zap, text: "Déploiement rapide", color: "from-yellow-500 to-orange-500" },
-    { icon: BarChart2, text: "Résultats mesurables", color: "from-green-500 to-teal-500" },
+    { icon: Bot, text: "Automatisation & IA" },
+    { icon: Workflow, text: "Workflows sur-mesure" },
+    { icon: BrainCircuit, text: "Agents IA" },
+    { icon: BarChart2, text: "Résultats mesurables" },
   ];
 
   const scrollWithOffset = (el: HTMLElement) => {
@@ -67,8 +67,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span>Gagnez du temps grâce à </span>
-              <span className="gradient-text">l'automatisation IA</span>
+              <span>Transformez l'IA en </span>
+              <span className="gradient-text">résultats opérationnels</span>
             </motion.h2>
 
             <motion.p
@@ -77,16 +77,25 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Votre équipe est trop talentueuse pour passer ses journées sur des tâches répétitives. Je conçois les systèmes qui s'en chargent automatiquement.
+              J'accompagne les entreprises dans leur transition vers l'intelligence artificielle : audit des processus, automatisation, agents IA et accompagnement des équipes.
             </motion.p>
 
             <motion.p
-              className="text-gray-400 text-lg max-w-2xl mx-auto mb-12"
+              className="text-gray-400 text-lg max-w-2xl mx-auto mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              On commence par comprendre vos vrais problèmes, pas par vous vendre de la technologie.
+              Pas de technologie gadget. Des solutions IA conçues autour de vos vrais besoins métier.
+            </motion.p>
+
+            <motion.p
+              className="text-primary text-lg md:text-xl font-medium tracking-wide mb-12 italic"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+            >
+              L'IA exécute. L'humain contrôle.
             </motion.p>
 
             <motion.div
@@ -101,17 +110,17 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="button-primary px-8 py-4 rounded-full inline-flex items-center text-lg font-semibold group"
               >
-                <span>Réserver mon audit gratuit</span>
+                <span>Réserver un audit IA</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <HashLink
                 smooth
-                to="/#services"
+                to="/#expertise"
                 scroll={scrollWithOffset}
                 className="text-gray-300 hover:text-primary transition-colors px-8 py-3 text-lg font-medium flex items-center group"
               >
-                <span>Découvrir mes services</span>
+                <span>Découvrir mon approche</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </HashLink>
             </motion.div>
@@ -122,7 +131,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              ✓ Audit 100% gratuit · ✓ Sans engagement · ✓ Diagnostic concret en 1H
+              ✓ Audit IA 100% gratuit · ✓ Sans engagement · ✓ Diagnostic concret en 1H
             </motion.p>
           </motion.div>
         </ParallaxSection>
