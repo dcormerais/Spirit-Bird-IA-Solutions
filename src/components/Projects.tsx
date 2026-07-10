@@ -9,67 +9,63 @@ const projects = [
     type: 'automation',
     badge: '⭐ Workflow Complet',
     description:
-      "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs encore et encore... c'est du temps perdu et une source d'erreurs coûteuses. Ce workflow n8n surveille votre inventaire en continu, vous envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs. Vous gardez le contrôle, sans le travail répétitif.",
+      "Les niveaux de stock, les commandes fournisseurs et les relances sont souvent suivis manuellement. Ce workflow n8n surveille automatiquement les stocks, identifie les besoins, prépare les actions nécessaires et laisse une validation humaine avant exécution. Une automatisation conçue pour réduire les tâches répétitives tout en gardant le contrôle.",
     image: '/Images/Workflow_N8N.png',
     technicalHighlights: [
-      'Déclencheur planifié toutes les X heures',
-      'Lecture Google Sheets en temps réel',
-      'Filtrage automatique des stocks bas',
-      'Agent IA pour rédaction des emails'
+      'Surveillance automatique des niveaux de stock',
+      'Connexion Google Sheets et outils métier',
+      'Détection des stocks critiques',
+      'Agent IA pour génération des emails fournisseurs'
     ],
     userExperience: [
-      "Étape d'approbation par email en 1 clic",
+      "Validation humaine avant chaque action importante",
       'Emails fournisseurs personnalisés par IA',
-      'Zéro saisie manuelle',
-      'Historique des actions automatisé'
+      'Réduction des saisies manuelles',
+      'Historique des actions automatisées'
     ],
     technologies: ['n8n', 'OpenAI', 'Google Sheets', 'Gmail API']
   },
+
   {
-    title: 'Rendez-vous Sans Frontières',
-    type: 'web',
-    badge: null,
+    title: 'Assistant IA interne métier',
+    type: 'automation',
+    badge: '⭐ Assistant IA',
     description:
-      "Site web conçu pour une agence spécialisée dans les voyages immersifs au Maroc. L'enjeu : traduire l'authenticité des expériences proposées dans un design épuré et performant, qui donne envie de partir dès la première seconde.",
-    image: '/Images/rdvsf3.jpg',
-    link: 'https://rendez-vous-sans-frontieres.fr/',
+      "Les informations importantes d'une entreprise sont souvent dispersées entre documents, procédures et bases internes. Cet assistant IA permet aux équipes de retrouver rapidement les bonnes informations et d'obtenir des réponses contextualisées à partir des ressources de l'entreprise.",
     technicalHighlights: [
-      'Temps de chargement inférieur à 1s',
-      'Score mobile 98/100 Lighthouse',
-      'Protection DDoS intégrée',
-      'Déploiements Git automatisés'
+      'Base documentaire interne connectée',
+      'Recherche augmentée par IA (RAG)',
+      'Connexion aux sources métier existantes',
+      'Gestion du contexte et des droits d’accès'
     ],
     userExperience: [
-      'Micro-animations fluides',
-      'Navigation intuitive en 3 clics maximum',
-      'Formulaire intelligent en temps réel',
-      'Adaptation parfaite tous écrans'
+      'Réponses instantanées aux questions internes',
+      'Accès simplifié aux procédures',
+      'Réduction du temps de recherche',
+      'Interface conversationnelle naturelle'
     ],
-    technologies: ['React', 'Tailwind CSS', 'Node.js', 'Netlify']
+    technologies: ['Claude', 'OpenAI', 'RAG', 'Vector Database']
   },
+
   {
-    title: 'MyMental',
-    type: 'mobile',
-    badge: null,
+    title: 'Automatisation de processus métier',
+    type: 'automation',
+    badge: '⭐ Workflow IA',
     description:
-      "Application mobile pensée pour accompagner les utilisateurs dans un parcours de santé globale : méditation guidée, entraînements adaptés et interactions sociales. Un projet technique exigeant, mêlant synchronisation temps réel et expérience utilisateur soignée.",
-    images: [
-      '/Images/mymental.jpg',
-      '/Images/mymental2.jpg'
-    ],
+      "Les entreprises consacrent encore beaucoup de temps à traiter manuellement des emails, documents ou demandes entrantes. Cette automatisation analyse les informations reçues, déclenche les bonnes actions et connecte les différents outils utilisés au quotidien.",
     technicalHighlights: [
-      'Architecture React Native optimisée',
-      'Synchronisation temps réel',
-      'Cache intelligent hors-ligne',
-      'Performances natives iOS et Android'
+      'Analyse automatique des demandes entrantes',
+      'Connexion aux outils existants via API',
+      'Workflows multi-étapes personnalisés',
+      'Orchestration avec validation humaine'
     ],
     userExperience: [
-      'Interface fluide et intuitive',
-      'Transitions personnalisées',
-      'Notifications contextuelles',
-      "Gestion d'état avancée"
+      'Centralisation des informations',
+      'Moins de tâches répétitives',
+      'Meilleure visibilité sur les opérations',
+      'Processus plus fiables et traçables'
     ],
-    technologies: ['React Native', 'Node.js', 'WebSocket']
+    technologies: ['n8n', 'APIs', 'LLM', 'Webhooks']
   }
 ];
 
@@ -103,8 +99,9 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Mes <span className="gradient-text">Réalisations</span>
+            Mes <span className="gradient-text">Réalisations IA</span>
           </motion.h2>
+
           <motion.p
             className="text-gray-400 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
@@ -112,7 +109,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Des projets concrets, des problèmes réels, des solutions qui fonctionnent.
+            Des automatisations concrètes et des assistants IA conçus pour résoudre des problèmes métier réels.
           </motion.p>
         </div>
 
@@ -129,44 +126,42 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`service-card rounded-xl bg-dark/40 flex flex-col hover:border-primary/20 transition-all duration-300 ${
-                project.type === 'automation' ? 'border-primary/30 bg-primary/5' : ''
-              }`}
+              className="service-card rounded-xl bg-dark/40 flex flex-col border-primary/30 bg-primary/5 hover:border-primary/20 transition-all duration-300"
             >
-              {/* Image */}
-              {'images' in project && project.images && project.images.length > 0 ? (
-                <div className="relative bg-black rounded-t-xl overflow-hidden flex justify-center items-center gap-4 p-4 h-[400px]">
-                  {project.images.map((image, i) => (
-                    <img
-                      key={i}
-                      src={image}
-                      alt={`${project.title} - Vue ${i + 1}`}
-                      className="h-full w-auto object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                  ))}
-                </div>
-              ) : (
+
+              {project.image ? (
                 <div className="relative h-[350px] bg-dark/60 rounded-t-xl overflow-hidden">
                   <img
-                    src={'image' in project ? project.image : ''}
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-scale-down hover:scale-105 transition-transform duration-300"
                   />
                 </div>
+              ) : (
+                <div className="relative h-[220px] bg-gradient-to-br from-primary/10 to-dark/60 rounded-t-xl flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="inline-flex p-4 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                      <Zap className="w-10 h-10 text-primary" />
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      Solution IA sur mesure
+                    </p>
+                  </div>
+                </div>
               )}
-
-              {/* Contenu */}
-              <div className="flex-grow flex flex-col p-8">
+              <div className="flex-grow flex flex-col p-8 pt-10 border-t border-white/10">
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <h3 className="text-xl font-semibold">{project.title}</h3>
+
                       {project.badge && (
                         <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
                           {project.badge}
                         </span>
                       )}
                     </div>
+
                     {'link' in project && project.link && (
                       <a
                         href={project.link}
@@ -178,15 +173,26 @@ const Projects = () => {
                       </a>
                     )}
                   </div>
-                  <p className="text-gray-400 leading-relaxed">{project.description}</p>
+
+                  <p className="text-gray-400 leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
 
+
                 <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8">
+
                   <div>
-                    <h4 className="text-sm font-semibold text-primary mb-4">Points techniques</h4>
+                    <h4 className="text-sm font-semibold text-primary mb-4">
+                      Points techniques
+                    </h4>
+
                     <div className="space-y-2">
                       {project.technicalHighlights.map((highlight, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                        <div
+                          key={i}
+                          className="flex items-start gap-2 text-sm text-gray-300"
+                        >
                           <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
                           <span>{highlight}</span>
                         </div>
@@ -194,18 +200,27 @@ const Projects = () => {
                     </div>
                   </div>
 
+
                   <div>
-                    <h4 className="text-sm font-semibold text-primary mb-4">Expérience utilisateur</h4>
+                    <h4 className="text-sm font-semibold text-primary mb-4">
+                      Expérience utilisateur
+                    </h4>
+
                     <div className="space-y-2">
                       {project.userExperience.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                        <div
+                          key={i}
+                          className="flex items-start gap-2 text-sm text-gray-300"
+                        >
                           <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
                           <span>{feature}</span>
                         </div>
                       ))}
                     </div>
                   </div>
+
                 </div>
+
 
                 <div className="flex flex-wrap gap-2 pt-4 mt-8 border-t border-white/10">
                   {project.technologies.map((tech, i) => (
@@ -217,15 +232,20 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+
               </div>
+
             </motion.div>
           ))}
         </motion.div>
 
+
         <div className="mt-16 text-center">
+
           <p className="text-gray-400 mb-8">
             Chaque projet commence par une conversation. Dites-moi ce qui vous prend du temps et on voit ce qu'on peut automatiser.
           </p>
+
           <a
             href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
             target="_blank"
@@ -235,6 +255,7 @@ const Projects = () => {
             <Zap className="w-4 h-4" />
             <span>Réserver mon audit gratuit</span>
           </a>
+
         </div>
 
       </div>
