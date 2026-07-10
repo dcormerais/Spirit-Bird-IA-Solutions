@@ -9,15 +9,15 @@ const plans = [
     price: '1 200€ HT',
     followUp: 'à partir de 250€ / mois',
     followUpDetail:
-      'Hébergement, supervision, maintenance corrective, suivi et gestion des services IA utilisés',
+      'Hébergement des automatisations, supervision, maintenance corrective, consommation des services IA et support email',
     description:
-      'Pour automatiser un premier processus métier et éliminer une friction opérationnelle identifiée.',
+      'Pour automatiser un premier processus métier et supprimer une tâche répétitive qui ralentit vos équipes.',
     features: [
       '1 processus métier automatisé sur mesure',
       '2 à 3 outils connectés',
       'Configuration et mise en production',
-      'Documentation de prise en main incluse',
-      'Suivi du fonctionnement de la solution',
+      'Documentation complète de la solution',
+      'Suivi du fonctionnement de l’automatisation',
       'Support par email sous 48h',
     ],
     highlight: false,
@@ -30,15 +30,15 @@ const plans = [
     price: '2 500€ HT',
     followUp: 'à partir de 500€ / mois',
     followUpDetail:
-      'Suivi prioritaire, optimisations continues, supervision avancée et gestion des ressources IA',
+      'Hébergement, consommation API et modèles IA, supervision avancée, optimisations continues et support prioritaire',
     description:
-      'Pour automatiser plusieurs processus et améliorer durablement l’efficacité opérationnelle.',
+      'Pour les entreprises qui souhaitent automatiser plusieurs processus métiers et bénéficier d’un accompagnement continu.',
     features: [
       'Plusieurs workflows métier automatisés',
       'Intégrations avancées avec vos outils existants',
-      'Dashboard de suivi automatisé',
+      'Traçabilité et supervision des automatisations',
       'Formation de vos équipes',
-      'Optimisation continue des automatisations',
+      'Optimisation continue des workflows',
       'Gestion des services IA utilisés',
       'Support prioritaire sous 24h',
     ],
@@ -52,14 +52,14 @@ const plans = [
     price: 'Sur devis',
     followUp: 'Sur devis',
     followUpDetail:
-      'Accompagnement dédié, évolution continue et pilotage complet de votre environnement IA',
+      'Infrastructure dédiée, accompagnement stratégique, évolutions continues et pilotage complet de votre environnement IA',
     description:
-      'Pour les projets nécessitant une architecture sur mesure, des agents IA et un accompagnement stratégique.',
+      'Pour les entreprises ayant besoin d’une architecture sur mesure, d’agents IA et d’un accompagnement avancé.',
     features: [
       'Architecture complète sur mesure',
-      'Agents IA et systèmes autonomes',
-      'Intégrations multiples',
-      'Dashboard et reporting avancés',
+      'Agents IA et automatisations avancées',
+      'Intégrations multiples avec votre écosystème',
+      'Suivi et reporting adaptés à vos besoins',
       'Formation et accompagnement des équipes',
       'Optimisations continues',
       'Pilotage global de la solution IA',
@@ -110,8 +110,8 @@ const Pricing = () => {
             J’analyse vos processus et vos outils pour identifier les automatisations
             réellement pertinentes.
 
-            Après le déploiement, je peux assurer le suivi, la maintenance et
-            l’évolution de votre solution pour garantir son bon fonctionnement dans le temps.
+            Après le déploiement, l’accompagnement mensuel permet d’assurer
+            l’hébergement, la supervision, la maintenance et l’évolution de votre solution IA.
           </motion.p>
 
         </div>
@@ -167,7 +167,7 @@ const Pricing = () => {
               <div className="pb-6 mb-6 border-b border-white/5">
 
                 <p className="text-xs text-gray-500 mb-2">
-                  Suivi & optimisation continue
+                  Exploitation & accompagnement continu
                 </p>
 
                 <p className="text-sm font-medium text-gray-300">
