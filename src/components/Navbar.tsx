@@ -36,7 +36,6 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Expertise', hash: '#expertise' },
     { name: 'Services', hash: '#services' },
     { name: 'À Propos', hash: '#about' },
     { name: 'Réalisations', hash: '#projets' },
@@ -112,7 +111,7 @@ const Navbar = () => {
               className="ml-8 px-6 py-2.5 rounded-full bg-primary text-dark font-semibold hover:bg-primary/90 transition-all duration-300 text-sm hover:scale-105 transform inline-flex items-center gap-2"
             >
               <CalendarCheck className="w-4 h-4" />
-              Audit IA
+              Audit gratuit
             </a>
           </div>
 
@@ -175,7 +174,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <CalendarCheck className="w-4 h-4" />
-                Réserver un audit IA
+                Réserver mon audit gratuit
               </a>
             </div>
           </motion.div>

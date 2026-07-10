@@ -1,40 +1,73 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Star, Zap, AlertCircle, Sparkles, TrendingUp } from 'lucide-react';
+import { ExternalLink, Star, Zap } from 'lucide-react';
 
 const projects = [
   {
     title: 'Gestion de stock automatisée',
     type: 'automation',
     badge: '⭐ Workflow Complet',
-    problem: "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs encore et encore : du temps perdu et une source d'erreurs coûteuses.",
-    solution: "Un workflow n8n surveille l'inventaire en continu, envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs. L'humain garde le contrôle, sans le travail répétitif.",
-    result: "Suppression totale de la saisie manuelle. Les commandes de réapprovisionnement sont préparées et envoyées automatiquement, avec validation en un clic.",
+    description:
+      "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs encore et encore... c'est du temps perdu et une source d'erreurs coûteuses. Ce workflow n8n surveille votre inventaire en continu, vous envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs. Vous gardez le contrôle, sans le travail répétitif.",
     image: '/Images/Workflow_N8N.png',
+    technicalHighlights: [
+      'Déclencheur planifié toutes les X heures',
+      'Lecture Google Sheets en temps réel',
+      'Filtrage automatique des stocks bas',
+      'Agent IA pour rédaction des emails'
+    ],
+    userExperience: [
+      "Étape d'approbation par email en 1 clic",
+      'Emails fournisseurs personnalisés par IA',
+      'Zéro saisie manuelle',
+      'Historique des actions automatisé'
+    ],
     technologies: ['n8n', 'OpenAI', 'Google Sheets', 'Gmail API']
   },
   {
     title: 'Rendez-vous Sans Frontières',
     type: 'web',
     badge: null,
-    problem: "Une agence de voyages immersifs au Maroc avait besoin d'un site qui traduisse l'authenticité des expériences proposées, avec des performances techniques irréprochables.",
-    solution: "Site web conçu avec un design épuré et performant : temps de chargement inférieur à 1s, score mobile 98/100 Lighthouse, navigation intuitive en 3 clics maximum.",
-    result: "Un site qui donne envie de partir dès la première seconde, avec une adaptation parfaite sur tous les écrans et des déploiements Git automatisés.",
+    description:
+      "Site web conçu pour une agence spécialisée dans les voyages immersifs au Maroc. L'enjeu : traduire l'authenticité des expériences proposées dans un design épuré et performant, qui donne envie de partir dès la première seconde.",
     image: '/Images/rdvsf3.jpg',
     link: 'https://rendez-vous-sans-frontieres.fr/',
+    technicalHighlights: [
+      'Temps de chargement inférieur à 1s',
+      'Score mobile 98/100 Lighthouse',
+      'Protection DDoS intégrée',
+      'Déploiements Git automatisés'
+    ],
+    userExperience: [
+      'Micro-animations fluides',
+      'Navigation intuitive en 3 clics maximum',
+      'Formulaire intelligent en temps réel',
+      'Adaptation parfaite tous écrans'
+    ],
     technologies: ['React', 'Tailwind CSS', 'Node.js', 'Netlify']
   },
   {
     title: 'MyMental',
     type: 'mobile',
     badge: null,
-    problem: "Accompagner les utilisateurs dans un parcours de santé globale (méditation, entraînements, interactions sociales) avec une expérience technique fluide et fiable.",
-    solution: "Application mobile React Native avec synchronisation temps réel, cache intelligent hors-ligne et transitions personnalisées pour une expérience native sur iOS et Android.",
-    result: "Une interface fluide et intuitive, des notifications contextuelles et une gestion d'état avancée qui rendent le parcours utilisateur seamless.",
+    description:
+      "Application mobile pensée pour accompagner les utilisateurs dans un parcours de santé globale : méditation guidée, entraînements adaptés et interactions sociales. Un projet technique exigeant, mêlant synchronisation temps réel et expérience utilisateur soignée.",
     images: [
       '/Images/mymental.jpg',
       '/Images/mymental2.jpg'
+    ],
+    technicalHighlights: [
+      'Architecture React Native optimisée',
+      'Synchronisation temps réel',
+      'Cache intelligent hors-ligne',
+      'Performances natives iOS et Android'
+    ],
+    userExperience: [
+      'Interface fluide et intuitive',
+      'Transitions personnalisées',
+      'Notifications contextuelles',
+      "Gestion d'état avancée"
     ],
     technologies: ['React Native', 'Node.js', 'WebSocket']
   }
@@ -79,7 +112,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Des problèmes métier réels, des solutions IA concrètes, des résultats mesurables.
+            Des projets concrets, des problèmes réels, des solutions qui fonctionnent.
           </motion.p>
         </div>
 
@@ -145,36 +178,36 @@ const Projects = () => {
                       </a>
                     )}
                   </div>
+                  <p className="text-gray-400 leading-relaxed">{project.description}</p>
                 </div>
 
-                {/* Problème / Solution / Résultat */}
-                <div className="flex-grow space-y-4 mb-6">
-                  <div className="flex items-start gap-3 p-4 rounded-lg bg-red-500/5 border border-red-500/10">
-                    <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-xs font-semibold text-red-400 uppercase tracking-wider mb-1">Problème métier</p>
-                      <p className="text-sm text-gray-300 leading-relaxed">{project.problem}</p>
+                <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary mb-4">Points techniques</h4>
+                    <div className="space-y-2">
+                      {project.technicalHighlights.map((highlight, i) => (
+                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 p-4 rounded-lg bg-primary/5 border border-primary/10">
-                    <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Solution IA</p>
-                      <p className="text-sm text-gray-300 leading-relaxed">{project.solution}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-4 rounded-lg bg-green-500/5 border border-green-500/10">
-                    <TrendingUp className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-xs font-semibold text-green-400 uppercase tracking-wider mb-1">Résultat obtenu</p>
-                      <p className="text-sm text-gray-300 leading-relaxed">{project.result}</p>
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary mb-4">Expérience utilisateur</h4>
+                    <div className="space-y-2">
+                      {project.userExperience.map((feature, i) => (
+                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                          <span>{feature}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-4 mt-auto border-t border-white/10">
+                <div className="flex flex-wrap gap-2 pt-4 mt-8 border-t border-white/10">
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
@@ -200,7 +233,7 @@ const Projects = () => {
             className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 hover:scale-105 transform transition-all duration-300"
           >
             <Zap className="w-4 h-4" />
-            <span>Réserver un audit IA</span>
+            <span>Réserver mon audit gratuit</span>
           </a>
         </div>
 
