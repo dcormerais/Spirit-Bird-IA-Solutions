@@ -77,9 +77,9 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Vos équipes ne devraient pas perdre leurs journées à copier-coller des données,
-              traiter les mêmes emails ou faire communiquer des outils qui ne se parlent pas.
-              Je conçois et déploie des automatisations sur mesure pour éliminer ces frictions.
+              Libérez vos équipes des tâches répétitives.
+              <br />
+              J’intègre l’IA à vos outils existants pour automatiser vos processus métiers.
             </motion.p>
 
             <motion.p
