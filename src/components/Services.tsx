@@ -7,13 +7,13 @@ import {
   Zap,
   Clock,
   BarChart2,
-  Users,
   Search,
-  Code,
+  Sparkles,
   GraduationCap,
   X,
   Check,
   Workflow
+  Sparkles
 } from 'lucide-react';
 
 const problems = [
@@ -112,6 +112,7 @@ const Services = () => {
                 className="flex items-start gap-4 p-4 rounded-xl bg-white/5"
               >
                 <problem.icon className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+
                 <p className="text-gray-300 text-sm">
                   {problem.text}
                 </p>
@@ -125,7 +126,7 @@ const Services = () => {
             </p>
 
             <p className="text-gray-400 text-sm mb-8">
-              Nous identifions les automatisations qui apportent un réel gain opérationnel à votre entreprise.
+              J'identifie les automatisations qui apportent un réel gain opérationnel à votre entreprise.
             </p>
 
             <a
@@ -134,7 +135,10 @@ const Services = () => {
               rel="noopener noreferrer"
               className="button-primary px-8 py-3 rounded-full inline-flex items-center gap-2"
             >
-              <span>Réserver mon audit gratuit</span>
+              <span>
+                Réserver mon audit gratuit
+              </span>
+
               <ArrowRight className="w-4 h-4" />
             </a>
 
@@ -142,8 +146,10 @@ const Services = () => {
               ✓ Gratuit · ✓ Sans engagement · ✓ Diagnostic concret
             </p>
           </div>
+
         </motion.div>
                 <div className="text-center mb-16">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -156,6 +162,7 @@ const Services = () => {
             </div>
           </motion.div>
 
+
           <motion.h2
             className="text-3xl md:text-4xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
@@ -164,9 +171,10 @@ const Services = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="gradient-text">
-              Mes Services
+              Mes expertises IA
             </span>
           </motion.h2>
+
 
           <motion.p
             className="text-gray-400 max-w-2xl mx-auto"
@@ -176,22 +184,25 @@ const Services = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             J'accompagne les entreprises dans l'intégration de solutions IA
-            concrètes pour automatiser leurs opérations et améliorer leur efficacité.
+            concrètes pour automatiser leurs processus, connecter leurs outils
+            et améliorer leur performance opérationnelle.
           </motion.p>
+
         </div>
 
 
+
         {/* Cartes services */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
 
 
-          {/* Service principal IA */}
+          {/* Service principal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 service-card rounded-xl p-8 border-primary/50 bg-primary/5 ring-1 ring-primary/30 flex flex-col"
+            className="service-card rounded-xl p-8 border-primary/50 bg-primary/5 ring-1 ring-primary/30 flex flex-col"
           >
 
             <div className="mb-4">
@@ -202,36 +213,45 @@ const Services = () => {
 
 
             <div className="flex items-center gap-4 mb-6">
+
               <div className="p-3 rounded-full bg-primary/20 text-primary">
                 <Bot className="w-6 h-6" />
               </div>
 
+
               <h3 className="text-2xl font-semibold">
                 Intégration IA & Automatisation
               </h3>
+
             </div>
 
 
             <p className="text-gray-400 mb-8">
               Je transforme vos processus métiers en workflows intelligents :
-              automatisation des tâches répétitives, connexion de vos outils et
-              déploiement d'assistants IA adaptés à vos besoins.
+              automatisation des tâches répétitives, connexion de vos outils
+              et déploiement d'assistants IA adaptés à vos besoins.
             </p>
 
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 flex-grow">
+
               {featuresIA.map((feature, i) => (
+
                 <div
                   key={i}
                   className="flex items-center gap-2"
                 >
+
                   <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
 
                   <span className="text-sm text-gray-300">
                     {feature}
                   </span>
+
                 </div>
+
               ))}
+
             </div>
 
 
@@ -241,18 +261,21 @@ const Services = () => {
               rel="noopener noreferrer"
               className="mt-8 button-primary px-8 py-3 rounded-full inline-flex items-center gap-2 justify-center"
             >
+
               <span>
                 Identifier mes opportunités IA
               </span>
 
               <ArrowRight className="w-4 h-4" />
+
             </a>
 
           </motion.div>
 
 
 
-          {/* Service complémentaire */}
+
+          {/* Solutions IA personnalisées */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -262,29 +285,34 @@ const Services = () => {
           >
 
             <div className="flex items-center gap-4 mb-6">
+
               <div className="p-3 rounded-full bg-primary/10 text-primary">
-                <Code className="w-6 h-6" />
+                <Sparkles className="w-6 h-6" />
               </div>
 
+
               <h3 className="text-xl font-semibold">
-                Développement sur mesure
+                Solutions IA personnalisées
               </h3>
+
             </div>
 
 
             <p className="text-gray-400 mb-6 text-sm flex-grow">
-              Lorsque vos besoins nécessitent un outil spécifique,
-              je développe des applications web adaptées à votre activité
-              et pensées pour s'intégrer dans votre écosystème numérique.
+              Lorsque les solutions existantes ne suffisent pas, je conçois
+              des outils IA adaptés à votre activité : assistants intelligents,
+              outils métier personnalisés et intégrations avancées.
             </p>
 
 
             <div className="flex items-center gap-2 mt-auto">
-              <Users className="w-4 h-4 text-primary flex-shrink-0" />
+
+              <Bot className="w-4 h-4 text-primary flex-shrink-0" />
 
               <p className="text-sm text-gray-500">
-                Un complément technique au service de vos projets IA.
+                Des solutions conçues pour répondre à vos enjeux métier spécifiques.
               </p>
+
             </div>
 
 
@@ -294,17 +322,21 @@ const Services = () => {
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm group"
             >
+
               <span>
-                Parlons de votre besoin
+                Définissons votre solution IA
               </span>
 
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+
             </a>
 
           </motion.div>
 
+
         </div>
                 {/* Process d'accompagnement */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -312,6 +344,7 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="mb-20"
         >
+
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
             Une approche orientée résultats
           </h2>
@@ -320,6 +353,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             {steps.map((step, index) => (
+
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -348,15 +382,20 @@ const Services = () => {
                   {step.description}
                 </p>
 
+
               </motion.div>
+
             ))}
 
           </div>
+
         </motion.div>
 
 
 
+
         {/* Avant / Après */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -373,6 +412,7 @@ const Services = () => {
 
 
             {/* Avant */}
+
             <div className="service-card p-8 rounded-xl border-red-500/20 bg-red-500/5">
 
               <h3 className="text-lg font-semibold text-red-400 mb-6">
@@ -383,20 +423,20 @@ const Services = () => {
               <div className="space-y-4">
 
                 {beforeAfter.before.map((item, i) => (
+
                   <div
                     key={i}
                     className="flex items-start gap-3"
                   >
 
-                    <X
-                      className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5"
-                    />
+                    <X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
 
                     <span className="text-sm text-gray-300">
                       {item}
                     </span>
 
                   </div>
+
                 ))}
 
               </div>
@@ -405,7 +445,9 @@ const Services = () => {
 
 
 
+
             {/* Après */}
+
             <div className="service-card p-8 rounded-xl border-primary/30 bg-primary/5">
 
               <h3 className="text-lg font-semibold text-primary mb-6">
@@ -416,20 +458,20 @@ const Services = () => {
               <div className="space-y-4">
 
                 {beforeAfter.after.map((item, i) => (
+
                   <div
                     key={i}
                     className="flex items-start gap-3"
                   >
 
-                    <Check
-                      className="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
-                    />
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
 
                     <span className="text-sm text-gray-300">
                       {item}
                     </span>
 
                   </div>
+
                 ))}
 
               </div>
