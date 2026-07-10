@@ -77,7 +77,9 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Votre équipe est trop talentueuse pour passer ses journées sur des tâches répétitives. Je conçois les systèmes qui s'en chargent automatiquement.
+              Vos équipes ne devraient pas perdre leurs journées à copier-coller des données,
+              traiter les mêmes emails ou faire communiquer des outils qui ne se parlent pas.
+              Je conçois et déploie des automatisations sur mesure pour éliminer ces frictions.
             </motion.p>
 
             <motion.p
@@ -86,7 +88,8 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              On commence par comprendre vos vrais problèmes, pas par vous vendre de la technologie.
+              Pour les PME qui veulent gagner en efficacité sans remplacer leurs outils ni
+              perdre le contrôle sur leurs processus.
             </motion.p>
 
             <motion.div
