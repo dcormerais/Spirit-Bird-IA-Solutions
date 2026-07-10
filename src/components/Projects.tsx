@@ -1,40 +1,73 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Star, Zap, AlertTriangle, Cpu, TrendingUp } from 'lucide-react';
+import { ExternalLink, Star, Zap } from 'lucide-react';
 
 const projects = [
   {
     title: 'Gestion de stock automatisée',
     type: 'automation',
     badge: '⭐ Workflow Complet',
-    problem: "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs — un processus répétitif, source d'erreurs et chronophage.",
-    solution: "Un workflow n8n surveille l'inventaire en continu, envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs via un agent IA.",
-    result: "Zéro saisie manuelle, contrôle humain conservé à chaque étape, et des heures récupérées chaque semaine sur un process critique.",
+    description:
+      "Vérifier manuellement les niveaux de stock, identifier ce qui manque, rédiger les mêmes emails aux fournisseurs encore et encore... c'est du temps perdu et une source d'erreurs coûteuses. Ce workflow n8n surveille votre inventaire en continu, vous envoie un résumé avec bouton d'approbation, puis rédige et envoie automatiquement les emails aux bons fournisseurs. Vous gardez le contrôle, sans le travail répétitif.",
     image: '/Images/Workflow_N8N.png',
+    technicalHighlights: [
+      'Déclencheur planifié toutes les X heures',
+      'Lecture Google Sheets en temps réel',
+      'Filtrage automatique des stocks bas',
+      'Agent IA pour rédaction des emails'
+    ],
+    userExperience: [
+      "Étape d'approbation par email en 1 clic",
+      'Emails fournisseurs personnalisés par IA',
+      'Zéro saisie manuelle',
+      'Historique des actions automatisé'
+    ],
     technologies: ['n8n', 'OpenAI', 'Google Sheets', 'Gmail API']
   },
   {
     title: 'Rendez-vous Sans Frontières',
     type: 'web',
     badge: null,
-    problem: "Une agence de voyages immersifs au Maroc avait besoin d'un site qui traduit l'authenticité des expériences proposées tout en restant performant et facile à naviguer.",
-    solution: "Un site web épuré, optimisé pour la performance et pensé pour la conversion : micro-animations, navigation intuitive en 3 clics, formulaire intelligent en temps réel.",
-    result: "Temps de chargement inférieur à 1s, score mobile 98/100 Lighthouse, et une expérience qui donne envie de partir dès la première seconde.",
+    description:
+      "Site web conçu pour une agence spécialisée dans les voyages immersifs au Maroc. L'enjeu : traduire l'authenticité des expériences proposées dans un design épuré et performant, qui donne envie de partir dès la première seconde.",
     image: '/Images/rdvsf3.jpg',
     link: 'https://rendez-vous-sans-frontieres.fr/',
+    technicalHighlights: [
+      'Temps de chargement inférieur à 1s',
+      'Score mobile 98/100 Lighthouse',
+      'Protection DDoS intégrée',
+      'Déploiements Git automatisés'
+    ],
+    userExperience: [
+      'Micro-animations fluides',
+      'Navigation intuitive en 3 clics maximum',
+      'Formulaire intelligent en temps réel',
+      'Adaptation parfaite tous écrans'
+    ],
     technologies: ['React', 'Tailwind CSS', 'Node.js', 'Netlify']
   },
   {
     title: 'MyMental',
     type: 'mobile',
     badge: null,
-    problem: "Accompagner les utilisateurs dans un parcours de santé globale (méditation, entraînement, social) avec une application mobile exigeante en termes de synchronisation et d'expérience.",
-    solution: "Une application React Native avec synchronisation temps réel, cache intelligent hors-ligne et interface fluide pensée pour l'engagement utilisateur.",
-    result: "Une application native performante sur iOS et Android, avec transitions personnalisées et notifications contextuelles pour un engagement durable.",
+    description:
+      "Application mobile pensée pour accompagner les utilisateurs dans un parcours de santé globale : méditation guidée, entraînements adaptés et interactions sociales. Un projet technique exigeant, mêlant synchronisation temps réel et expérience utilisateur soignée.",
     images: [
       '/Images/mymental.jpg',
       '/Images/mymental2.jpg'
+    ],
+    technicalHighlights: [
+      'Architecture React Native optimisée',
+      'Synchronisation temps réel',
+      'Cache intelligent hors-ligne',
+      'Performances natives iOS et Android'
+    ],
+    userExperience: [
+      'Interface fluide et intuitive',
+      'Transitions personnalisées',
+      'Notifications contextuelles',
+      "Gestion d'état avancée"
     ],
     technologies: ['React Native', 'Node.js', 'WebSocket']
   }
@@ -145,32 +178,32 @@ const Projects = () => {
                       </a>
                     )}
                   </div>
+                  <p className="text-gray-400 leading-relaxed">{project.description}</p>
                 </div>
 
-                {/* Problème / Solution / Résultat */}
-                <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-red-400 flex items-center gap-2">
-                      <AlertTriangle className="w-4 h-4" />
-                      Problème métier
-                    </h4>
-                    <p className="text-sm text-gray-300 leading-relaxed">{project.problem}</p>
+                <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary mb-4">Points techniques</h4>
+                    <div className="space-y-2">
+                      {project.technicalHighlights.map((highlight, i) => (
+                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-primary flex items-center gap-2">
-                      <Cpu className="w-4 h-4" />
-                      Solution IA
-                    </h4>
-                    <p className="text-sm text-gray-300 leading-relaxed">{project.solution}</p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-green-400 flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4" />
-                      Résultat obtenu
-                    </h4>
-                    <p className="text-sm text-gray-300 leading-relaxed">{project.result}</p>
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary mb-4">Expérience utilisateur</h4>
+                    <div className="space-y-2">
+                      {project.userExperience.map((feature, i) => (
+                        <div key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 

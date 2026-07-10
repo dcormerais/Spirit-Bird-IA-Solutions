@@ -5,7 +5,6 @@ import { Linkedin, Mail, CalendarCheck } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Expertise from './components/Expertise';
 import Services from './components/Services';
 import Projects from './components/Projects';
 import Pricing from './components/Pricing';
@@ -47,7 +46,6 @@ const App: React.FC = () => {
                 <>
                   <Hero />
                   <About />
-                  <Expertise />
                   <Services />
                   <Projects />
                   <Pricing />
@@ -95,7 +93,6 @@ const App: React.FC = () => {
               <div>
                 <h3 className="text-sm font-semibold text-white mb-6">Navigation</h3>
                 <ul className="space-y-2">
-                  <li><a href="#expertise" className="text-sm text-gray-400 hover:text-primary transition-colors">Expertise</a></li>
                   <li><a href="#services" className="text-sm text-gray-400 hover:text-primary transition-colors">Services</a></li>
                   <li><a href="#about" className="text-sm text-gray-400 hover:text-primary transition-colors">À Propos</a></li>
                   <li><a href="#projets" className="text-sm text-gray-400 hover:text-primary transition-colors">Réalisations</a></li>
