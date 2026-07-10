@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Bot, ArrowRight, Brain, Zap, Clock, BarChart2, Users, Search, Code, GraduationCap, X, Check } from 'lucide-react';
+import { Globe, Bot, ArrowRight, Brain, Zap, Clock, BarChart2, Users, Search, Code, GraduationCap, X, Check, Cpu, Layers, Database, Plug } from 'lucide-react';
 
 const problems = [
   {
@@ -32,20 +32,20 @@ const steps = [
   {
     number: '1',
     icon: Search,
-    title: 'Audit gratuit',
-    description: "On analyse ensemble où vous perdez du temps. Tâches chronophages, outils mal connectés, process inefficaces — on identifie les vrais leviers d'action en 1 heure."
+    title: 'Comprendre avant d\'automatiser',
+    description: "Analyse des processus, identification des irritants et sélection des cas d'usage IA prioritaires."
   },
   {
     number: '2',
     icon: Code,
-    title: 'Développement',
-    description: "On connecte vos outils et on construit les automatisations qui ont le plus d'impact. Sans perturber vos équipes, sans tout réinventer."
+    title: 'Construire la solution adaptée',
+    description: "Développement des workflows, intégration des outils et création des systèmes IA."
   },
   {
     number: '3',
     icon: GraduationCap,
-    title: 'Formation',
-    description: "Vous et vos équipes prenez en main les nouveaux process. Documentation claire, accompagnement inclus. Vous pilotez, vous restez autonomes."
+    title: 'Déployer avec les équipes',
+    description: "Formation, documentation et accompagnement pour garantir une adoption durable."
   }
 ];
 
@@ -67,6 +67,37 @@ const beforeAfter = {
     "Vous scalez sans augmenter vos coûts fixes"
   ]
 };
+
+const techCategories = [
+  {
+    icon: Zap,
+    title: "Automatisation",
+    tools: ["n8n", "Make", "Zapier"]
+  },
+  {
+    icon: Brain,
+    title: "IA générative",
+    tools: ["OpenAI API", "Claude / Anthropic", "Agents IA", "LangChain"]
+  },
+  {
+    icon: Plug,
+    title: "Intégration",
+    tools: ["API REST", "Webhooks", "OAuth", "Gmail API", "Twilio"]
+  },
+  {
+    icon: Database,
+    title: "Données",
+    tools: ["Supabase", "PostgreSQL", "MongoDB", "Airtable"]
+  }
+];
+
+const startupServices = [
+  "Cadrage des besoins clients",
+  "Identification des cas d'usage",
+  "Intégration dans les environnements existants",
+  "Automatisation des processus",
+  "Accompagnement utilisateurs"
+];
 
 const Services = () => {
   return (
@@ -264,12 +295,64 @@ const Services = () => {
           </div>
         </motion.div>
 
+        {/* Technologies */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
+              <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
+                <Layers className="w-8 h-8 text-primary" />
+              </div>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Les technologies au service des <span className="gradient-text">usages métier</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Un socle technique solide, choisi pour sa fiabilité et sa capacité à s'intégrer à votre environnement existant.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {techCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="service-card p-6 rounded-xl hover:border-primary/30 transition-all duration-300"
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                    <category.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-semibold">{category.title}</h3>
+                </div>
+                <div className="space-y-2.5">
+                  {category.tools.map((tool, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></div>
+                      <span className="text-sm text-gray-300">{tool}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Avant / Après */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="mb-20"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
             Avant et après l'automatisation
@@ -303,6 +386,42 @@ const Services = () => {
             </div>
 
           </div>
+        </motion.div>
+
+        {/* Section Startups IA / Éditeurs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="service-card rounded-xl p-8 max-w-4xl mx-auto"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+              <Cpu className="w-5 h-5" />
+            </div>
+            <h2 className="text-xl font-bold">Vous développez une solution IA ?</h2>
+          </div>
+          <p className="text-gray-400 text-sm mb-6">
+            J'accompagne également les entreprises spécialisées en IA dans le passage entre technologie et adoption terrain.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {startupServices.map((service, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                <span className="text-sm text-gray-300">{service}</span>
+              </div>
+            ))}
+          </div>
+          <a
+            href="https://calendly.com/dorian-cormerais/spirit-bird-audit-gratuit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm group"
+          >
+            <span>Discutons de votre projet</span>
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </a>
         </motion.div>
 
       </div>

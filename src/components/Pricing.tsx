@@ -108,8 +108,7 @@ const Pricing = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Chaque projet commence par un audit gratuit. Je prends le temps de comprendre
-            vos process en profondeur pour ne vous proposer que ce qui est vraiment pertinent à automatiser.
+            Chaque projet commence par un audit permettant d'identifier les automatisations offrant le meilleur impact business.
           </motion.p>
         </div>
 

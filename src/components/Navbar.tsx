@@ -36,6 +36,7 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
+    { name: 'Expertise', hash: '#expertise' },
     { name: 'Services', hash: '#services' },
     { name: 'À Propos', hash: '#about' },
     { name: 'Réalisations', hash: '#projets' },
